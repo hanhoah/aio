@@ -6,6 +6,7 @@ import ServiceHero from '@/components/sections/service-hero';
 import ServiceFeatures from '@/components/sections/service-features';
 import FAQSection from '@/components/sections/faq-section';
 import ServiceCTA from '@/components/sections/service-cta';
+import RelatedServices from '@/components/sections/related-services';
 
 // Define metadata for the page
 export const metadata: Metadata = {
@@ -135,39 +136,47 @@ export default function KIContentMarketingPage() {
         features={serviceFeatures}
       />
       
-      {/* Main Content Section */}
+      {/* Main Content Section with Sidebar */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-semibold mb-6">KI-Texte für Unternehmenswebsites erstellen</h2>
-            
-            <div className="bg-blue-50 p-6 rounded-lg mb-8">
-              <p className="font-medium">
-                KI-Texte für Unternehmenswebsites werden durch einen kontrollierten Prozess erstellt, der KI-Technologie mit menschlicher Expertise kombiniert. Dieser Prozess umfasst die Entwicklung präziser Prompt-Templates basierend auf Markenrichtlinien, die KI-gestützte Texterstellung mit integrierten SEO-Parametern, eine professionelle Redaktion zur Qualitätssicherung und die technische Optimierung für verschiedene digitale Kanäle.
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Main Content - Takes 2/3 of the space on large screens */}
+            <div className="lg:col-span-2">
+              <h2 className="text-3xl font-semibold mb-6">KI-Texte für Unternehmenswebsites erstellen</h2>
+              
+              <div className="bg-blue-50 p-6 rounded-lg mb-8">
+                <p className="font-medium">
+                  KI-Texte für Unternehmenswebsites werden durch einen kontrollierten Prozess erstellt, der KI-Technologie mit menschlicher Expertise kombiniert. Dieser Prozess umfasst die Entwicklung präziser Prompt-Templates basierend auf Markenrichtlinien, die KI-gestützte Texterstellung mit integrierten SEO-Parametern, eine professionelle Redaktion zur Qualitätssicherung und die technische Optimierung für verschiedene digitale Kanäle.
+                </p>
+              </div>
+              
+              <div className="space-y-8 mb-12">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Website-Content-Strategie mit KI entwickeln</h3>
+                  <p className="text-gray-700">
+                    Wir analysieren datengetrieben Content-Gaps und die Wettbewerbslandschaft, identifizieren High-Potential-Themen mit KI-Unterstützung und entwickeln eine thematische Inhaltsarchitektur. Dabei priorisieren wir Inhalte basierend auf Business Impact und SEO-Potenzial.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Fachlich präzise B2B-Inhalte mit KI erstellen</h3>
+                  <p className="text-gray-700">
+                    Für jedes Projekt entwickeln wir branchenspezifische Prompt-Templates, integrieren Unternehmenswissen und Fachterminologie und achten auf die richtige Balance zwischen Fachtiefe und Verständlichkeit. Quellenintegration und Faktenchecks stellen die Glaubwürdigkeit sicher.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Content für die duale Sichtbarkeit optimieren</h3>
+                  <p className="text-gray-700">
+                    Unsere Inhalte werden sowohl für klassische Suchmaschinen als auch für KI-Assistenten strukturiert. Wir implementieren &quot;Answer Boxes&quot; für extrahierbare Antworten, nutzen Schema.org-Markup für verbesserte semantische Erfassung und optimieren Meta-Daten für beide Suchökosysteme.
+                  </p>
+                </div>
+              </div>
             </div>
             
-            <div className="space-y-8 mb-12">
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Website-Content-Strategie mit KI entwickeln</h3>
-                <p className="text-gray-700">
-                  Wir analysieren datengetrieben Content-Gaps und die Wettbewerbslandschaft, identifizieren High-Potential-Themen mit KI-Unterstützung und entwickeln eine thematische Inhaltsarchitektur. Dabei priorisieren wir Inhalte basierend auf Business Impact und SEO-Potenzial.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Fachlich präzise B2B-Inhalte mit KI erstellen</h3>
-                <p className="text-gray-700">
-                  Für jedes Projekt entwickeln wir branchenspezifische Prompt-Templates, integrieren Unternehmenswissen und Fachterminologie und achten auf die richtige Balance zwischen Fachtiefe und Verständlichkeit. Quellenintegration und Faktenchecks stellen die Glaubwürdigkeit sicher.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Content für die duale Sichtbarkeit optimieren</h3>
-                <p className="text-gray-700">
-                  Unsere Inhalte werden sowohl für klassische Suchmaschinen als auch für KI-Assistenten strukturiert. Wir implementieren &quot;Answer Boxes&quot; für extrahierbare Antworten, nutzen Schema.org-Markup für verbesserte semantische Erfassung und optimieren Meta-Daten für beide Suchökosysteme.
-                </p>
-              </div>
+            {/* Sidebar - Takes 1/3 of the space on large screens */}
+            <div className="lg:col-span-1">
+              <RelatedServices currentServiceId="ki-content-marketing" />
             </div>
           </div>
         </div>

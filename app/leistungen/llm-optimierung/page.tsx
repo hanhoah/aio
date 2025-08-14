@@ -2,11 +2,11 @@ import React from 'react';
 import { Metadata } from 'next';
 import JsonLd from '@/lib/jsonld';
 import { generateServiceSchema, generateFAQSchema } from '@/lib/schema';
-
-// Import service page components (these would need to be created separately)
-// import HeroSection from '@/components/sections/service-hero';
-// import ServiceDescription from '@/components/sections/service-description';
-// import FAQSection from '@/components/sections/faq-section';
+import ServiceHero from '@/components/sections/service-hero';
+import ServiceFeatures from '@/components/sections/service-features';
+import FAQSection from '@/components/sections/faq-section';
+import ServiceCTA from '@/components/sections/service-cta';
+import RelatedServices from '@/components/sections/related-services';
 
 // Define metadata for the page
 export const metadata: Metadata = {
@@ -102,52 +102,96 @@ export default function LLMOptimizationPage() {
       <JsonLd jsonLd={serviceSchema} schemaId="service-schema-llm-optimierung" />
       <JsonLd jsonLd={faqSchema} schemaId="faq-schema-llm-optimierung" />
       
-      {/* Page content would go here */}
-      <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-8">LLM-Optimierung Website: Maximale Sichtbarkeit in KI-Assistenten</h1>
-        
-        {/* 
-          Actual content components would be used here, such as:
-          <HeroSection title="LLM-Optimierung Website" />
-          <ServiceDescription />
-          <FAQSection questions={faqQuestions} />
-        */}
-        
-        <section className="mb-12">
-          <h2 className="text-3xl font-semibold mb-4">Was ist LLM-Optimierung für Websites?</h2>
-          <div className="bg-blue-50 p-6 rounded-lg mb-8">
-            <p className="font-medium">
-              LLM-Optimierung für Websites ist der spezialisierte Prozess, Webinhalte für Large Language Models (LLMs) wie ChatGPT und Google Gemini zu optimieren. Im Gegensatz zur allgemeinen KI-Website-Optimierung fokussiert sich dieser Ansatz spezifisch auf die technischen Anforderungen von Sprachmodellen an Textstruktur, Informationsdichte und Extrahierbarkeit, um in KI-generierten Antworten bevorzugt zitiert zu werden.
-            </p>
-          </div>
-          
-          {/* Rest of the content would be added here */}
-        </section>
-        
-        {/* FAQ Section Example */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-semibold mb-6">Häufig gestellte Fragen zur LLM-Optimierung</h2>
-          <div className="space-y-6">
-            {faqQuestions.map((faq, index) => (
-              <div key={index} className="border-b border-gray-200 pb-4">
-                <h3 className="text-xl font-medium mb-2">{faq.question}</h3>
-                <p>{faq.answer}</p>
+      {/* Hero Section */}
+      <ServiceHero 
+        title="LLM-Optimierung Website: Maximale Sichtbarkeit in KI-Assistenten"
+        description="LLM-Optimierung für Websites ist der spezialisierte Prozess, Webinhalte für Large Language Models (LLMs) wie ChatGPT und Google Gemini zu optimieren, um in KI-generierten Antworten bevorzugt zitiert zu werden."
+        ctaText="Kostenloses LLM-Audit anfordern"
+      />
+      
+      {/* Main Content with Sidebar */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Main Content - Takes 2/3 of the space on large screens */}
+            <div className="lg:col-span-2">
+              <h2 className="text-3xl font-semibold mb-6">Unsere LLM-Optimierungsmethodik</h2>
+              
+              <div className="bg-blue-50 p-6 rounded-lg mb-8">
+                <p className="font-medium">
+                  Unsere LLM-Optimierungsmethodik umfasst vier Hauptkomponenten: strukturelle Anpassung von Inhalten für bessere Extrahierbarkeit, semantische Anreicherung durch Entitäten und Kontext, Implementierung von dedizierten Antwortblöcken und kontinuierliches Testing mit führenden LLMs. Dieser technisch fundierte Ansatz maximiert die Wahrscheinlichkeit, dass Ihre Inhalte als Quellen für KI-generierte Antworten verwendet werden.
+                </p>
               </div>
-            ))}
+              
+              <div className="space-y-8 mb-12">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Strukturelle Optimierung</h3>
+                  <p className="text-gray-700">
+                    Wir restrukturieren Ihre Inhalte in klar definierte, semantische Abschnitte, implementieren hierarchische Überschriftenstrukturen und optimieren strukturierte Elemente wie Listen und Tabellen. Die verbesserte Inhaltsgliederung erleichtert die Informationsextraktion durch KI-Systeme.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Semantische Anreicherung</h3>
+                  <p className="text-gray-700">
+                    Wir integrieren relevante Entitäten und Fachbegriffe, etablieren semantische Beziehungen zwischen Konzepten und bieten eindeutige Definitionen für eine optimale kontextuelle Einbettung von Informationen, die das Verständnis der KI verbessert.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Technische Implementierung</h3>
+                  <p className="text-gray-700">
+                    Unsere Umsetzung umfasst die Implementierung von Schema.org-Markup, semantischer HTML-Auszeichnung und speziellen Meta-Tags für KI-Crawler. Diese technischen Maßnahmen verbessern die maschinelle Lesbarkeit und ermöglichen eine präzisere Erfassung Ihrer Inhalte.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Sidebar - Takes 1/3 of the space on large screens */}
+            <div className="lg:col-span-1">
+              <RelatedServices currentServiceId="llm-optimierung" />
+            </div>
           </div>
-        </section>
-        
-        {/* CTA Section */}
-        <section>
-          <div className="bg-indigo-100 p-8 rounded-lg text-center">
-            <h2 className="text-2xl font-bold mb-4">Bereit, Ihre Website für KI-Assistenten zu optimieren?</h2>
-            <p className="mb-6">Fordern Sie jetzt Ihr kostenloses LLM-Readiness-Audit an und erfahren Sie, wie gut Ihre Website bei ChatGPT & Co. performt.</p>
-            <button className="bg-indigo-600 text-white px-6 py-3 rounded-md font-medium hover:bg-indigo-700 transition-colors">
-              Kostenloses Audit anfordern
-            </button>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
+      
+      {/* Features Section */}
+      <ServiceFeatures
+        title="Vorteile der LLM-Optimierung"
+        description="Messbare Vorteile für Ihre digitale Präsenz im KI-Zeitalter"
+        features={[
+          {
+            title: "Erhöhte Zitierfrequenz",
+            description: "Durchschnittlich 3-5x höhere Wahrscheinlichkeit, in KI-generierten Antworten zitiert zu werden, was zu direkter Sichtbarkeit und Traffic-Steigerung führt."
+          },
+          {
+            title: "Verbesserte Informationsextraktion",
+            description: "Ihre Inhalte werden präziser und vollständiger von KI-Systemen erfasst, was zu akkurateren Antworten führt und Ihre Expertise korrekt repräsentiert."
+          },
+          {
+            title: "Erhöhte Themenautorität",
+            description: "Durch systematische semantische Vernetzung wird Ihre Website als Autoritätsquelle für spezifische Themen erkannt und bevorzugt referenziert."
+          },
+          {
+            title: "Wettbewerbsvorsprung",
+            description: "Während viele Unternehmen noch auf traditionelles SEO fokussiert sind, sichert Ihnen die frühzeitige LLM-Optimierung einen signifikanten Vorsprung."
+          }
+        ]}
+      />
+      
+      {/* FAQ Section */}
+      <FAQSection 
+        questions={faqQuestions}
+        title="Häufig gestellte Fragen zur LLM-Optimierung"
+      />
+      
+      {/* CTA Section */}
+      <ServiceCTA
+        title="Bereit, Ihre Website für KI-Assistenten zu optimieren?"
+        description="Fordern Sie jetzt Ihr kostenloses LLM-Readiness-Audit an und erfahren Sie, wie gut Ihre Website bei ChatGPT & Co. performt."
+        buttonText="Kostenloses Audit anfordern"
+        buttonLink="/kontakt"
+      />
     </>
   );
 }

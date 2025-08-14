@@ -6,6 +6,7 @@ import ServiceHero from '@/components/sections/service-hero';
 import ServiceFeatures from '@/components/sections/service-features';
 import FAQSection from '@/components/sections/faq-section';
 import ServiceCTA from '@/components/sections/service-cta';
+import RelatedServices from '@/components/sections/related-services';
 
 // Define metadata for the page
 export const metadata: Metadata = {
@@ -135,46 +136,54 @@ export default function KISEOPage() {
         features={serviceFeatures}
       />
       
-      {/* Main Content Section */}
+      {/* Main Content Section with Sidebar */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-semibold mb-6">KI-Tools und -Technologien für SEO</h2>
-            
-            <div className="bg-blue-50 p-6 rounded-lg mb-8">
-              <p className="font-medium">
-                Für KI-gestützte SEO setzen wir spezialisierte Tools und Technologien ein: KI-basierte Keyword-Research-Tools wie Semrush AI und Surfer SEO, Natural Language Processing für Content-Optimierung, Machine Learning für Ranking-Prognosen und KI-gestützte Analytics-Plattformen. Diese Technologien ermöglichen präzisere Analysen, effizientere Prozesse und datengetriebene Entscheidungen für maximale SEO-Performance.
-              </p>
-            </div>
-            
-            <div className="space-y-8 mb-12">
-              <div>
-                <h3 className="text-xl font-semibold mb-3">KI-basierte Keyword-Research-Tools</h3>
-                <p className="text-gray-700">
-                  Wir nutzen fortschrittliche Tools wie Semrush AI und Ahrefs für umfassende Keyword-Analyse, Surfer SEO für semantische Content-Optimierung, MarketMuse für Topic-Modeling und Content-Planung sowie Clearscope für NLP-basierte Content-Empfehlungen.
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Main Content - Takes 2/3 of the space on large screens */}
+            <div className="lg:col-span-2">
+              <h2 className="text-3xl font-semibold mb-6">KI-Tools und -Technologien für SEO</h2>
+              
+              <div className="bg-blue-50 p-6 rounded-lg mb-8">
+                <p className="font-medium">
+                  Für KI-gestützte SEO setzen wir spezialisierte Tools und Technologien ein: KI-basierte Keyword-Research-Tools wie Semrush AI und Surfer SEO, Natural Language Processing für Content-Optimierung, Machine Learning für Ranking-Prognosen und KI-gestützte Analytics-Plattformen. Diese Technologien ermöglichen präzisere Analysen, effizientere Prozesse und datengetriebene Entscheidungen für maximale SEO-Performance.
                 </p>
               </div>
               
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Natural Language Processing (NLP)</h3>
-                <p className="text-gray-700">
-                  Unsere Methodik beinhaltet BERT-basierte Analyse für semantische Relevanz, Sentiment-Analyse für Nutzerbedürfnisse, Entity-Recognition für semantische Anreicherung und Content-Scoring für SEO-Performance-Prognosen.
-                </p>
+              <div className="space-y-8 mb-12">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">KI-basierte Keyword-Research-Tools</h3>
+                  <p className="text-gray-700">
+                    Wir nutzen fortschrittliche Tools wie Semrush AI und Ahrefs für umfassende Keyword-Analyse, Surfer SEO für semantische Content-Optimierung, MarketMuse für Topic-Modeling und Content-Planung sowie Clearscope für NLP-basierte Content-Empfehlungen.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Natural Language Processing (NLP)</h3>
+                  <p className="text-gray-700">
+                    Unsere Methodik beinhaltet BERT-basierte Analyse für semantische Relevanz, Sentiment-Analyse für Nutzerbedürfnisse, Entity-Recognition für semantische Anreicherung und Content-Scoring für SEO-Performance-Prognosen.
+                  </p>
+                </div>
+                
+                <div>
+                  <h3 className="text-xl font-semibold mb-3">Machine Learning für Ranking-Prognosen</h3>
+                  <p className="text-gray-700">
+                    Wir setzen prädiktive Modelle für Ranking-Entwicklungen ein, nutzen Pattern-Recognition für Algorithmus-Veränderungen, implementieren Automated Testing für SEO-Hypothesen und verwenden Competitive Intelligence mit ML-Algorithmen.
+                  </p>
+                </div>
               </div>
               
-              <div>
-                <h3 className="text-xl font-semibold mb-3">Machine Learning für Ranking-Prognosen</h3>
-                <p className="text-gray-700">
-                  Wir setzen prädiktive Modelle für Ranking-Entwicklungen ein, nutzen Pattern-Recognition für Algorithmus-Veränderungen, implementieren Automated Testing für SEO-Hypothesen und verwenden Competitive Intelligence mit ML-Algorithmen.
+              <h2 className="text-3xl font-semibold mb-6">Vorteile von KI-gestütztem SEO</h2>
+              <div className="bg-blue-50 p-6 rounded-lg mb-8">
+                <p className="font-medium">
+                  KI-gestütztes SEO bietet vier zentrale Vorteile gegenüber traditionellen Ansätzen: präzisere Datenanalyse und Entscheidungsfindung, effizientere Prozesse durch Automatisierung, höhere Wettbewerbsfähigkeit durch prädiktive Strategien und bessere Anpassungsfähigkeit an Algorithmus-Updates. Diese Vorteile führen zu nachhaltigen Rankings, qualifizierterem Traffic und höheren Konversionsraten.
                 </p>
               </div>
             </div>
             
-            <h2 className="text-3xl font-semibold mb-6">Vorteile von KI-gestütztem SEO</h2>
-            <div className="bg-blue-50 p-6 rounded-lg mb-8">
-              <p className="font-medium">
-                KI-gestütztes SEO bietet vier zentrale Vorteile gegenüber traditionellen Ansätzen: präzisere Datenanalyse und Entscheidungsfindung, effizientere Prozesse durch Automatisierung, höhere Wettbewerbsfähigkeit durch prädiktive Strategien und bessere Anpassungsfähigkeit an Algorithmus-Updates. Diese Vorteile führen zu nachhaltigen Rankings, qualifizierterem Traffic und höheren Konversionsraten.
-              </p>
+            {/* Sidebar - Takes 1/3 of the space on large screens */}
+            <div className="lg:col-span-1">
+              <RelatedServices currentServiceId="ki-seo" />
             </div>
           </div>
         </div>

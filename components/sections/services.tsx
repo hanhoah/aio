@@ -14,26 +14,26 @@ interface ServiceCardProps {
 
 const ServiceCard = ({ icon, title, description, link, isHighlighted = false }: ServiceCardProps) => {
   return (
-    <div className={`p-6 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group ${
-      isHighlighted 
-        ? 'border-primary/50 bg-gradient-to-br from-white to-primary/10' 
-        : 'border-blue-100/80 bg-gradient-to-br from-white to-blue-50/30'
-    }`}>
-      <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-5 transition-all duration-300 ${
-        isHighlighted
-          ? 'bg-primary text-white'
-          : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white'
+    <Link href={link} className="block group">
+      <div className={`p-6 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group-hover:border-primary/30 ${
+        isHighlighted 
+          ? 'border-primary/50 bg-gradient-to-br from-white to-primary/10' 
+          : 'border-blue-100/80 bg-gradient-to-br from-white to-blue-50/30'
       }`}>
-        {icon}
+        <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-5 transition-all duration-300 ${
+          isHighlighted
+            ? 'bg-primary text-white'
+            : 'bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white'
+        }`}>
+          {icon}
+        </div>
+        <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{title}</h3>
+        <p className="text-gray-600 mb-4">{description}</p>
+        <div className="flex items-center text-primary font-medium">
+          Mehr erfahren <ChevronRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+        </div>
       </div>
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-gray-600 mb-4">{description}</p>
-      <Button variant="link" className="p-0 text-primary font-medium" asChild>
-        <Link href={link} className="flex items-center">
-          Mehr erfahren <ChevronRight className="ml-1 h-4 w-4" />
-        </Link>
-      </Button>
-    </div>
+    </Link>
   )
 }
 
