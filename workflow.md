@@ -1,6 +1,6 @@
-# AIO Agentur Workflow & Best Practices
+# AIO Consulting Workflow & Best Practices
 
-Diese Dokumentation enthält Best Practices und Workflow-Richtlinien für die Entwicklung der AIO Agentur-Website. Befolge diese Richtlinien, um einen konsistenten, wartbaren und leistungsstarken Code zu gewährleisten.
+Diese Dokumentation enthält Best Practices und Workflow-Richtlinien für die Entwicklung der AIO Consulting-Website. Befolge diese Richtlinien, um einen konsistenten, wartbaren und leistungsstarken Code zu gewährleisten.
 
 ## Technologie-Stack
 

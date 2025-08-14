@@ -2,8 +2,8 @@ import React from "react"
 import getLegalData from "@/lib/legal"
 
 export const metadata = {
-  title: "Impressum | AIO Agentur",
-  description: "Impressum und rechtliche Informationen der AIO Agentur",
+  title: "Impressum | AIO Consulting",
+  description: "Impressum und rechtliche Informationen der AIO Consulting",
 }
 
 export default function Impressum() {

@@ -17,7 +17,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="font-bold text-2xl text-primary">
-          AIO Agentur
+          AIO Consulting
         </Link>
 
         {/* Desktop Navigation */}

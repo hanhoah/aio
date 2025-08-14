@@ -1,6 +1,6 @@
-# AIO Agentur Website
+# AIO Consulting Website
 
-Moderne Unternehmenswebsite für die AIO Agentur, gebaut mit Next.js, TypeScript, Tailwind CSS und shadcn/ui.
+Moderne Unternehmenswebsite für die AIO Consulting, gebaut mit Next.js, TypeScript, Tailwind CSS und shadcn/ui.
 
 ## Tech-Stack
 
@@ -22,8 +22,8 @@ Moderne Unternehmenswebsite für die AIO Agentur, gebaut mit Next.js, TypeScript
 1. Repository klonen:
 
 ```bash
-git clone https://github.com/dein-username/aio-agentur.de.git
-cd aio-agentur.de
+git clone https://github.com/dein-username/aio-consulting.de.git
+cd aio-consulting.de
 ```
 
 2. Abhängigkeiten installieren:
@@ -105,7 +105,7 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/dein-username/aio-agentur.de.git
+git remote add origin https://github.com/dein-username/aio-consulting.de.git
 git push -u origin main
 ```
 

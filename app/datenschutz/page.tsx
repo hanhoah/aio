@@ -2,8 +2,8 @@ import React from "react"
 import getLegalData from "@/lib/legal"
 
 export const metadata = {
-  title: "Datenschutz | AIO Agentur",
-  description: "Datenschutzerklärung der AIO Agentur",
+  title: "Datenschutz | AIO Consulting",
+  description: "Datenschutzerklärung der AIO Consulting",
 }
 
 export default function Datenschutz() {

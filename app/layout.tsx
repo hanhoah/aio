@@ -7,7 +7,7 @@ import Footer from "@/components/layout/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "AIO Agentur | Moderne Webentwicklung & Digitale Lösungen",
+  title: "AIO Consulting | Moderne Webentwicklung & Digitale Lösungen",
   description: "Ihre Full-Service-Agentur für digitale Lösungen, Webentwicklung und kreatives Marketing.",
 }
 

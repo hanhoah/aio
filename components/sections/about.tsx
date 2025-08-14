@@ -11,7 +11,7 @@ const About = () => {
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Über uns</h2>
             <p className="text-lg text-gray-800 mb-6">
-              Die AIO Agentur steht für kreative Lösungen und technische Exzellenz. 
+              Die AIO Consulting steht für kreative Lösungen und technische Exzellenz. 
               Als Full-Service-Digitalagentur unterstützen wir Unternehmen jeder Größe 
               dabei, im digitalen Zeitalter erfolgreich zu sein.
             </p>
@@ -34,7 +34,7 @@ const About = () => {
           <div className="rounded-lg overflow-hidden shadow-xl">
             <Image 
               src="/images/aboutus.png"
-              alt="AIO Agentur Team"
+              alt="AIO Consulting Team"
               width={1200}
               height={675}
               className="w-full h-auto"

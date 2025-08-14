@@ -1,15 +1,15 @@
 {
   "company": {
-    "name": "AIO Agentur",
+    "name": "AIO Consulting",
     "legalForm": "",
     "street": "Elisabeth-Selbert-Str. 17",
     "zipCode": "45473",
     "city": "Mülheim an der Ruhr",
     "country": "Deutschland",
-    "email": "info@aio-agentur.de",
+    "email": "info@aio-consulting.de",
     "phone": "+49 (0) 1637516883",
     "fax": "",
-    "website": "https://www.aio-agentur.de"
+    "website": "https://www.aio-consulting.de"
   },
   "registration": {
     "court": "Amtsgericht Musterstadt",
@@ -23,12 +23,12 @@
     "zipCode": "45473",
     "city": "Mülheim an der Ruhr",
     "country": "Deutschland",
-    "email": "info@aio-agentur.de"
+    "email": "info@aio-consulting.de"
   },
   "dataProtection": {
     "officer": {
       "name": "Han Hoa Huynh",
-      "email": "info@aio-agentur.de",
+      "email": "info@aio-consulting.de",
       "phone": "+49 (0) 1637516883"
     },
     "hostingProvider": {
@@ -65,13 +65,13 @@
     },
     "copyright": {
       "year": 2023,
-      "holder": "AIO Agentur GmbH"
+      "holder": "AIO Consulting GmbH"
     }
   },
   "socialMedia": {
-    "facebook": "https://facebook.com/aio-agentur",
+    "facebook": "https://facebook.com/aio-consulting",
     "instagram": "https://instagram.com/aio_agentur",
-    "linkedin": "https://linkedin.com/company/aio-agentur",
+    "linkedin": "https://linkedin.com/company/aio-consulting",
     "twitter": "https://twitter.com/aio_agentur"
   }
 }
