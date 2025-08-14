@@ -10,7 +10,7 @@ export default function Impressum() {
   // Diese Funktion würde normalerweise clientseitig nicht funktionieren,
   // aber in einer Page-Komponente (Server Component) ist es in Ordnung
   const legal = getLegalData();
-  const { company, registration, representatives, responsibleForContent, legal: legalInfo } = legal;
+  const { company, registration, responsibleForContent, legal: legalInfo } = legal;
 
   return (
     <div className="container mx-auto px-4 py-12">
