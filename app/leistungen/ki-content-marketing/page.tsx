@@ -165,7 +165,7 @@ export default function KIContentMarketingPage() {
               <div>
                 <h3 className="text-xl font-semibold mb-3">Content für die duale Sichtbarkeit optimieren</h3>
                 <p className="text-gray-700">
-                  Unsere Inhalte werden sowohl für klassische Suchmaschinen als auch für KI-Assistenten strukturiert. Wir implementieren "Answer Boxes" für extrahierbare Antworten, nutzen Schema.org-Markup für verbesserte semantische Erfassung und optimieren Meta-Daten für beide Suchökosysteme.
+                  Unsere Inhalte werden sowohl für klassische Suchmaschinen als auch für KI-Assistenten strukturiert. Wir implementieren &quot;Answer Boxes&quot; für extrahierbare Antworten, nutzen Schema.org-Markup für verbesserte semantische Erfassung und optimieren Meta-Daten für beide Suchökosysteme.
                 </p>
               </div>
             </div>
