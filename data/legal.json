@@ -1,0 +1,77 @@
+{
+  "company": {
+    "name": "AIO Agentur",
+    "legalForm": "",
+    "street": "Elisabeth-Selbert-Str. 17",
+    "zipCode": "45473",
+    "city": "Mülheim an der Ruhr",
+    "country": "Deutschland",
+    "email": "info@aio-agentur.de",
+    "phone": "+49 (0) 1637516883",
+    "fax": "",
+    "website": "https://www.aio-agentur.de"
+  },
+  "registration": {
+    "court": "Amtsgericht Musterstadt",
+    "number": "HRB 123456",
+    "vatId": "DE123456789",
+    "taxId": "1234567890"
+  },
+  "responsibleForContent": {
+    "name": "Han Hoa Huynh",
+    "street": "Elisabeth-Selbert-Str. 17",
+    "zipCode": "45473",
+    "city": "Mülheim an der Ruhr",
+    "country": "Deutschland",
+    "email": "info@aio-agentur.de"
+  },
+  "dataProtection": {
+    "officer": {
+      "name": "Han Hoa Huynh",
+      "email": "info@aio-agentur.de",
+      "phone": "+49 (0) 1637516883"
+    },
+    "hostingProvider": {
+      "name": "Muster Hosting GmbH",
+      "street": "Hostingstraße 1",
+      "zipCode": "54321",
+      "city": "Serverstadt",
+      "country": "Deutschland",
+      "website": "https://muster-hosting.de"
+    },
+    "cookies": {
+      "necessary": [
+        {
+          "name": "Session Cookie",
+          "purpose": "Notwendig für die Grundfunktionen der Website",
+          "duration": "Session"
+        }
+      ],
+      "statistics": [
+        {
+          "name": "Google Analytics",
+          "purpose": "Analyse des Nutzerverhaltens",
+          "duration": "2 Jahre",
+          "thirdParty": true,
+          "provider": "Google LLC"
+        }
+      ]
+    }
+  },
+  "legal": {
+    "disputeResolution": {
+      "participate": false,
+      "platform": "https://ec.europa.eu/consumers/odr/"
+    },
+    "copyright": {
+      "year": 2023,
+      "holder": "AIO Agentur GmbH"
+    }
+  },
+  "socialMedia": {
+    "facebook": "https://facebook.com/aio-agentur",
+    "instagram": "https://instagram.com/aio_agentur",
+    "linkedin": "https://linkedin.com/company/aio-agentur",
+    "twitter": "https://twitter.com/aio_agentur"
+  }
+}
