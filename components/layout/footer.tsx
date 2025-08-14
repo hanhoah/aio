@@ -3,6 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import getLegalData from "@/lib/legal"
+import { services } from "@/data/services"
 
 const Footer = () => {
   const legal = getLegalData();
@@ -81,38 +82,16 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Leistungen</h3>
             <ul className="space-y-2">
-              <li>
-                <Link 
-                  href="/leistungen/ki-content-marketing" 
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  KI-Content-Marketing
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/leistungen/ki-seo" 
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  KI-SEO
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/leistungen/llm-optimierung" 
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  LLM-Optimierung
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/leistungen/prompt-engineering" 
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Prompt Engineering
-                </Link>
-              </li>
+              {services.map(service => (
+                <li key={service.id}>
+                  <Link 
+                    href={service.link} 
+                    className="text-gray-300 hover:text-white transition-colors"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
               <li>
                 <Link 
                   href="/leistungen" 

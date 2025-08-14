@@ -1,16 +1,10 @@
 import React from "react"
-import { 
-  Globe, 
-  SmartphoneIcon, 
-  BarChart3, 
-  Search, 
-  BrainCircuit,
-  ChevronRight
-} from "lucide-react"
+import { ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { services as servicesData } from "@/data/services"
 
-type ServiceProps = {
+interface ServiceCardProps {
   icon: React.ReactNode
   title: string
   description: string
@@ -18,7 +12,7 @@ type ServiceProps = {
   isHighlighted?: boolean
 }
 
-const ServiceCard = ({ icon, title, description, link, isHighlighted = false }: ServiceProps) => {
+const ServiceCard = ({ icon, title, description, link, isHighlighted = false }: ServiceCardProps) => {
   return (
     <div className={`p-6 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group ${
       isHighlighted 
@@ -44,39 +38,11 @@ const ServiceCard = ({ icon, title, description, link, isHighlighted = false }: 
 }
 
 const Services = () => {
-  const services = [
-    {
-      icon: <BrainCircuit size={28} />,
-      title: "KI-Website-Optimierung",
-      description: "Optimierung Ihrer Website für das KI-Zeitalter, mit dualer Sichtbarkeit in Suchmaschinen und KI-Assistenten.",
-      link: "/leistungen/llm-optimierung",
-      isHighlighted: true
-    },
-    {
-      icon: <Search size={28} />,
-      title: "KI-SEO",
-      description: "KI-gestützte Suchmaschinenoptimierung mit präziserer Nutzerintentionsanalyse und verbesserten Rankings in modernen Suchmaschinen.",
-      link: "/leistungen/ki-seo"
-    },
-    {
-      icon: <Globe size={28} />,
-      title: "LLM-Optimierung",
-      description: "Spezialisierte Optimierung von Webinhalten für Large Language Models wie ChatGPT und Google Gemini.",
-      link: "/leistungen/llm-optimierung"
-    },
-    {
-      icon: <BarChart3 size={28} />,
-      title: "KI-Content-Marketing",
-      description: "Strategischer Einsatz von KI zur Entwicklung, Erstellung und Optimierung von B2B-Fachinhalten für maximale Effizienz.",
-      link: "/leistungen/ki-content-marketing"
-    },
-    {
-      icon: <SmartphoneIcon size={28} />,
-      title: "Prompt Engineering",
-      description: "Strategische Entwicklung von Prompts für KI-Systeme zur Erstellung hochwertiger, SEO-optimierter Webinhalte.",
-      link: "/leistungen/prompt-engineering"
-    }
-  ]
+  // Prepare the services data with the icon components
+  const services = servicesData.map(service => ({
+    ...service,
+    icon: <service.icon size={28} />
+  }))
 
   return (
     <section id="leistungen" className="py-20 bg-gradient-to-b from-blue-50 via-indigo-50/30 to-white">
@@ -84,15 +50,15 @@ const Services = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Unsere Leistungen</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Von der Konzeption bis zur Umsetzung bieten wir Ihnen alle Dienstleistungen aus einer Hand.
-            Spezialisiert auf <span className="text-primary font-medium">KI-basierte Lösungen</span> für die digitale Transformation.
+            Spezialisierte <span className="text-primary font-medium">KI-basierte Lösungen</span> für Ihre Website und Content-Strategie.
+            Optimieren Sie Ihre digitale Präsenz für Suchmaschinen und KI-Assistenten.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {services.map((service, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6">
+          {services.map((service) => (
             <ServiceCard 
-              key={index}
+              key={service.id}
               icon={service.icon}
               title={service.title}
               description={service.description}
@@ -104,8 +70,8 @@ const Services = () => {
         
         <div className="mt-16 text-center">
           <Button asChild size="lg">
-            <Link href="/#kontakt">
-              Unverbindliches Beratungsgespräch vereinbaren
+            <Link href="/leistungen">
+              Alle Leistungen entdecken
             </Link>
           </Button>
         </div>

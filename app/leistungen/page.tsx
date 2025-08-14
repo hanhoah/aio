@@ -1,58 +1,12 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { services } from '@/data/services';
 
 export const metadata: Metadata = {
   title: 'Unsere Leistungen | AIO Consulting',
   description: 'Entdecken Sie unsere spezialisierten Dienstleistungen für KI-Website-Optimierung, LLM-Optimierung, KI-SEO und Prompt Engineering.',
 };
-
-const services = [
-  {
-    id: 'ki-content-marketing',
-    title: 'KI-Content-Marketing B2B',
-    description: 'Strategischer Ansatz zur Entwicklung, Erstellung und Optimierung von B2B-Fachinhalten mithilfe künstlicher Intelligenz für maximale Effizienz und Wirksamkeit.',
-    benefits: [
-      'Reduzierung der Content-Erstellungszeit um 50-70%',
-      'Konsistente Markensprache über alle Inhalte hinweg',
-      'Datenbasierte Themenauswahl statt subjektiver Einschätzungen',
-      'Bewältigung größerer Content-Volumina ohne Personalaufstockung'
-    ]
-  },
-  {
-    id: 'ki-seo',
-    title: 'KI-gestützte Suchmaschinenoptimierung',
-    description: 'Strategische Integration von KI-Technologien in SEO-Prozesse für präzisere Nutzerintentionsanalyse, semantische Content-Optimierung und verbesserte Rankings in modernen Suchmaschinen.',
-    benefits: [
-      'Präzisere Datenanalyse und Entscheidungsfindung',
-      'Effizientere Prozesse durch Automatisierung',
-      'Höhere Wettbewerbsfähigkeit durch prädiktive Strategien',
-      'Bessere Anpassungsfähigkeit an Algorithmus-Updates'
-    ]
-  },
-  {
-    id: 'llm-optimierung',
-    title: 'LLM-Optimierung Website',
-    description: 'Spezialisierter Prozess zur Optimierung von Webinhalten für Large Language Models wie ChatGPT und Google Gemini, um in KI-generierten Antworten bevorzugt zitiert zu werden.',
-    benefits: [
-      'Erhöhte Zitierfrequenz in KI-Antworten',
-      'Verbesserte Informationsextraktion durch KI-Systeme',
-      'Erhöhte Themenautorität',
-      'Wettbewerbsvorsprung im wachsenden Markt der KI-gestützten Informationssuche'
-    ]
-  },
-  {
-    id: 'prompt-engineering',
-    title: 'Prompt Engineering für Webinhalte',
-    description: 'Strategische Entwicklung und Optimierung von Anweisungen (Prompts) für KI-Systeme zur Erstellung hochwertiger, SEO-optimierter und zielgruppenrelevanter Webinhalte.',
-    benefits: [
-      'Signifikante Zeit- und Kostenersparnis bei der Content-Erstellung',
-      'Konsistentere Markensprache über alle Inhalte hinweg',
-      'Verbesserte SEO-Performance durch systematisch optimierte Texte',
-      'Höhere Skalierbarkeit der Content-Produktion'
-    ]
-  }
-];
 
 export default function ServicesPage() {
   return (
@@ -77,7 +31,7 @@ export default function ServicesPage() {
                 
                 <h3 className="font-semibold text-lg mb-3">Vorteile:</h3>
                 <ul className="space-y-2 mb-6">
-                  {service.benefits.map((benefit, index) => (
+                  {service.benefits?.map((benefit, index) => (
                     <li key={index} className="flex items-start">
                       <span className="text-indigo-500 mr-2">✓</span>
                       <span>{benefit}</span>

@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { services } from "@/data/services"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -78,13 +79,11 @@ const NavLinks = ({ className, onClick, isMobile = false }: NavLinksProps) => {
     }
   }, [isMobile])
 
-  // Services dropdown items
-  const serviceItems = [
-    { href: "/leistungen/ki-content-marketing", label: "KI-Content-Marketing" },
-    { href: "/leistungen/ki-seo", label: "KI-SEO" },
-    { href: "/leistungen/llm-optimierung", label: "LLM-Optimierung" },
-    { href: "/leistungen/prompt-engineering", label: "Prompt Engineering" }
-  ]
+  // Services dropdown items - dynamically generated from services data
+  const serviceItems = services.map(service => ({
+    href: service.link,
+    label: service.title
+  }))
 
   // Toggle dropdown for mobile
   const handleServicesToggle = () => {
