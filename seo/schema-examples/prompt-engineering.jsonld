@@ -1,0 +1,101 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.aio-consulting.de/leistungen/prompt-engineering/#service",
+  "name": "Prompt Engineering für Webinhalte",
+  "url": "https://www.aio-consulting.de/leistungen/prompt-engineering",
+  "description": "Strategische Entwicklung und Optimierung von Anweisungen (Prompts) für KI-Systeme zur Erstellung hochwertiger, SEO-optimierter und zielgruppenrelevanter Webinhalte.",
+  "provider": {
+    "@id": "https://www.aio-consulting.de/#organization"
+  },
+  "serviceType": "Content-Optimierung",
+  "category": "Digital Marketing",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Deutschland"
+    },
+    {
+      "@type": "Country",
+      "name": "Österreich"
+    },
+    {
+      "@type": "Country",
+      "name": "Schweiz"
+    }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "name": "Prompt Engineering für Webinhalte",
+    "description": "Schulung und Beratung zur effektiven Nutzung von KI-Tools für qualitativ hochwertige Webinhalte.",
+    "price": "3500.00",
+    "priceCurrency": "EUR",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "3500.00",
+      "priceCurrency": "EUR",
+      "valueAddedTaxIncluded": false
+    },
+    "itemOffered": {
+      "@type": "Service",
+      "name": "Prompt Engineering Workshop Basispaket",
+      "description": "Grundlagen- und Fortgeschrittenen-Workshop für effektives Prompt Engineering in Ihrem Unternehmen."
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Prompt Engineering Leistungen",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Inhouse-Workshops und Schulungen",
+          "description": "Praxisorientierte Schulungen zu Grundlagen und fortgeschrittenen Techniken des Prompt Engineerings."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Maßgeschneiderte Prompt-Entwicklung",
+          "description": "Entwicklung optimierter Prompts für Ihre spezifischen Content-Anforderungen."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "SEO-optimierte Blogartikel-Erstellung",
+          "description": "Entwicklung von Prompt-Templates für verschiedene Blogformate mit integrierter SEO-Optimierung."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Kontinuierliche Beratung und Optimierung",
+          "description": "Langfristige Begleitung mit regelmäßigen Reviews und Anpassungen an neue KI-Modellversionen."
+        }
+      }
+    ]
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://www.aio-consulting.de/kontakt",
+    "providesService": {
+      "@id": "https://www.aio-consulting.de/leistungen/prompt-engineering/#service"
+    },
+    "serviceLocation": {
+      "@type": "Place",
+      "name": "AIO Consulting Büro",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Elisabeth-Selbert-Str. 17",
+        "addressLocality": "Mülheim an der Ruhr",
+        "postalCode": "45473",
+        "addressCountry": "DE"
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.aio-consulting.de/leistungen/ki-website-optimierung/#service",
+  "name": "KI-Website-Optimierung",
+  "url": "https://www.aio-consulting.de/leistungen/ki-website-optimierung",
+  "description": "Strategische Optimierung von Unternehmenswebsites für maximale Sichtbarkeit in Suchmaschinen und KI-Assistenten wie ChatGPT und Google Gemini.",
+  "provider": {
+    "@id": "https://www.aio-consulting.de/#organization"
+  },
+  "serviceType": "Website-Optimierung",
+  "category": "Digital Marketing",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Deutschland"
+    },
+    {
+      "@type": "Country",
+      "name": "Österreich"
+    },
+    {
+      "@type": "Country",
+      "name": "Schweiz"
+    }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "name": "KI-Website-Optimierung",
+    "description": "Umfassende Analyse und Optimierung Ihrer Website für duale Sichtbarkeit in Suchmaschinen und KI-Assistenten.",
+    "price": "5000.00",
+    "priceCurrency": "EUR",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "5000.00",
+      "priceCurrency": "EUR",
+      "valueAddedTaxIncluded": false
+    },
+    "itemOffered": {
+      "@type": "Service",
+      "name": "KI-Website-Optimierung Basispaket",
+      "description": "Analyse, Strategie und Implementierung der wichtigsten KI-Optimierungsmaßnahmen für Ihre Website."
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "KI-Optimierungsleistungen",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "KI-Website-Audit",
+          "description": "Umfassende Analyse Ihrer Website hinsichtlich KI-Readiness."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Content-Optimierung für KI",
+          "description": "Anpassung Ihrer Inhalte für optimale Erfassung durch KI-Assistenten."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Schema.org-Implementation",
+          "description": "Implementierung strukturierter Daten für verbesserte semantische Erfassung."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Kontinuierliches KI-Monitoring",
+          "description": "Laufende Überwachung und Anpassung Ihrer KI-Optimierungsstrategie."
+        }
+      }
+    ]
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://www.aio-consulting.de/kontakt",
+    "providesService": {
+      "@id": "https://www.aio-consulting.de/leistungen/ki-website-optimierung/#service"
+    },
+    "serviceLocation": {
+      "@type": "Place",
+      "name": "AIO Consulting Büro",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Elisabeth-Selbert-Str. 17",
+        "addressLocality": "Mülheim an der Ruhr",
+        "postalCode": "45473",
+        "addressCountry": "DE"
+      }
+    }
+  }
+}

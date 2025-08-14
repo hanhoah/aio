@@ -1,0 +1,47 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.aio-consulting.de/leistungen/prompt-engineering/#faqpage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie unterscheidet sich professionelles Prompt Engineering von einfachen ChatGPT-Anfragen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Professionelles Prompt Engineering verwendet systematisch strukturierte Anweisungen mit präzisen Parametern, Kontextinformationen, Zielgruppenspezifikationen und Formatvorgaben. Im Gegensatz zu einfachen ChatGPT-Anfragen basiert es auf umfassendem Verständnis der KI-Modelle, integriert SEO-Prinzipien und Markenrichtlinien und wird kontinuierlich durch Testing und Feedback optimiert, um konsistent hochwertige Ergebnisse zu liefern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert es, bis ein Team Prompt Engineering effektiv einsetzen kann?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nach einer grundlegenden Schulung (1-2 Tage) kann ein Team bereits einfache Prompt-Templates anwenden und erste Verbesserungen erzielen. Die volle Expertise entwickelt sich typischerweise über 4-6 Wochen aktiver Anwendung mit begleitendem Coaching. Die kontinuierliche Verfeinerung der Fähigkeiten und Anpassung an neue KI-Modelle ist ein fortlaufender Prozess, der langfristig weitergeführt werden sollte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Arten von Website-Inhalten eignen sich am besten für KI-generierte Texte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Besonders gut geeignet sind informative Blogartikel, Produktbeschreibungen, FAQ-Sektionen, Kategoriebeschreibungen und standardisierte Landingpages. Weniger geeignet sind hochkreative Inhalte mit sehr spezifischem Ton, komplexe technische Erklärungen mit hohem Fachwissen und stark emotionale oder narrative Texte, bei denen die authentische menschliche Stimme im Vordergrund steht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Werden KI-generierte Inhalte von Google negativ bewertet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google bewertet Inhalte nach ihrer Qualität, Relevanz und ihrem Nutzen für den Suchenden, nicht nach der Erstellungsmethode. Professionell mit Prompt Engineering erstellte KI-Inhalte, die hochwertig, informativ und nutzerorientiert sind, werden positiv bewertet. Entscheidend ist, dass die Inhalte Mehrwert bieten, korrekt sind und nicht generisch wirken – Eigenschaften, die durch gezieltes Prompt Engineering sichergestellt werden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie wird der ROI von Prompt-Engineering-Schulungen gemessen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der ROI wird anhand mehrerer Faktoren gemessen: Zeitersparnis bei der Content-Erstellung (typischerweise 50-70%), Reduzierung von Überarbeitungszyklen, erhöhte Content-Produktionskapazität sowie verbesserte Content-Performance (Traffic, Conversions, Rankings). Ein umfassendes Tracking vor und nach der Implementierung ermöglicht die präzise Quantifizierung dieser Vorteile und die Berechnung des konkreten finanziellen Nutzens."
+      }
+    }
+  ]
+}

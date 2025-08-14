@@ -1,0 +1,47 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://www.aio-consulting.de/leistungen/ki-website-optimierung/#faqpage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen klassischem SEO und KI-Website-Optimierung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Klassisches SEO fokussiert sich auf Ranking-Faktoren für Suchmaschinen, während KI-Website-Optimierung zusätzlich die Anforderungen von KI-Assistenten wie ChatGPT berücksichtigt. Dazu gehören strukturierte Antworten, semantische Vernetzung und kontextuelle Relevanz für beide Ökosysteme."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert es, bis KI-Optimierungsmaßnahmen Wirkung zeigen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Erste Verbesserungen bei der Erfassung durch KI-Assistenten sind oft nach 4-6 Wochen messbar. Die volle Wirkung einer umfassenden KI-Optimierungsstrategie entfaltet sich typischerweise innerhalb von 3-6 Monaten, abhängig vom Ausgangszustand der Website."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Arten von Websites profitieren am meisten von KI-Optimierung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Besonders stark profitieren informationsreiche B2B-Websites, E-Commerce-Plattformen mit komplexen Produktangeboten und Service-Anbieter mit erklärungsbedürftigen Leistungen. Grundsätzlich kann jede Website durch KI-Optimierung ihre Sichtbarkeit und Konversionsrate verbessern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist KI-Optimierung auch für kleine Unternehmen sinnvoll?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, gerade kleinere Unternehmen können durch gezielte KI-Optimierung einen Wettbewerbsvorteil erzielen. Wir bieten skalierbare Lösungen, die auch mit begrenztem Budget signifikante Verbesserungen der digitalen Sichtbarkeit ermöglichen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie wird der Erfolg von KI-Optimierungsmaßnahmen gemessen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wir messen den Erfolg anhand verschiedener KPIs: Sichtbarkeit in KI-Antworten, Verbesserung der organischen Rankings, Steigerung des qualifizierten Traffics, höhere Engagement-Raten sowie letztendlich die Zunahme von Conversions und Leads aus beiden Kanälen."
+      }
+    }
+  ]
+}

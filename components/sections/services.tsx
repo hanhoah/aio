@@ -14,10 +14,11 @@ type ServiceProps = {
   icon: React.ReactNode
   title: string
   description: string
+  link: string
   isHighlighted?: boolean
 }
 
-const ServiceCard = ({ icon, title, description, isHighlighted = false }: ServiceProps) => {
+const ServiceCard = ({ icon, title, description, link, isHighlighted = false }: ServiceProps) => {
   return (
     <div className={`p-6 rounded-xl shadow-md border hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group ${
       isHighlighted 
@@ -34,7 +35,7 @@ const ServiceCard = ({ icon, title, description, isHighlighted = false }: Servic
       <h3 className="text-xl font-bold mb-3">{title}</h3>
       <p className="text-gray-600 mb-4">{description}</p>
       <Button variant="link" className="p-0 text-primary font-medium" asChild>
-        <Link href="/#kontakt" className="flex items-center">
+        <Link href={link} className="flex items-center">
           Mehr erfahren <ChevronRight className="ml-1 h-4 w-4" />
         </Link>
       </Button>
@@ -45,30 +46,35 @@ const ServiceCard = ({ icon, title, description, isHighlighted = false }: Servic
 const Services = () => {
   const services = [
     {
-      icon: <Globe size={28} />,
-      title: "Webentwicklung",
-      description: "Moderne, responsive Websites und Web-Anwendungen mit optimaler Performance und Benutzerfreundlichkeit."
-    },
-    {
-      icon: <SmartphoneIcon size={28} />,
-      title: "Mobile Apps",
-      description: "Native und hybride App-Entwicklung für iOS und Android mit nahtlosem Benutzererlebnis."
+      icon: <BrainCircuit size={28} />,
+      title: "KI-Website-Optimierung",
+      description: "Optimierung Ihrer Website für das KI-Zeitalter, mit dualer Sichtbarkeit in Suchmaschinen und KI-Assistenten.",
+      link: "/leistungen/llm-optimierung",
+      isHighlighted: true
     },
     {
       icon: <Search size={28} />,
-      title: "AI-Optimierung",
-      description: "Moderne Suchmaschinenoptimierung im KI-Zeitalter, die Ihre Sichtbarkeit in intelligenten Suchsystemen erhöht und qualifizierten Traffic generiert."
+      title: "KI-SEO",
+      description: "KI-gestützte Suchmaschinenoptimierung mit präziserer Nutzerintentionsanalyse und verbesserten Rankings in modernen Suchmaschinen.",
+      link: "/leistungen/ki-seo"
+    },
+    {
+      icon: <Globe size={28} />,
+      title: "LLM-Optimierung",
+      description: "Spezialisierte Optimierung von Webinhalten für Large Language Models wie ChatGPT und Google Gemini.",
+      link: "/leistungen/llm-optimierung"
     },
     {
       icon: <BarChart3 size={28} />,
-      title: "Digitales Marketing",
-      description: "Ganzheitliche Marketing-Strategien, die Ihre Zielgruppe erreichen und Conversions steigern."
+      title: "KI-Content-Marketing",
+      description: "Strategischer Einsatz von KI zur Entwicklung, Erstellung und Optimierung von B2B-Fachinhalten für maximale Effizienz.",
+      link: "/leistungen/ki-content-marketing"
     },
     {
-      icon: <BrainCircuit size={28} />,
-      title: "KI-Lösungen",
-      description: "Maßgeschneiderte KI-Anwendungen, die Ihre Geschäftsprozesse automatisieren, optimieren und neue Möglichkeiten erschließen.",
-      isHighlighted: true
+      icon: <SmartphoneIcon size={28} />,
+      title: "Prompt Engineering",
+      description: "Strategische Entwicklung von Prompts für KI-Systeme zur Erstellung hochwertiger, SEO-optimierter Webinhalte.",
+      link: "/leistungen/prompt-engineering"
     }
   ]
 
@@ -90,6 +96,7 @@ const Services = () => {
               icon={service.icon}
               title={service.title}
               description={service.description}
+              link={service.link}
               isHighlighted={service.isHighlighted}
             />
           ))}

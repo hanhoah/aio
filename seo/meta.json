@@ -1,0 +1,59 @@
+{
+  "pages": [
+    {
+      "slug": "/",
+      "metaTitle": "KI Website Optimierung für Google & ChatGPT | AIO Consulting",
+      "metaDescription": "Optimieren Sie Ihre Website für das KI-Zeitalter. Mehr Sichtbarkeit bei Google UND ChatGPT mit unserer dualen Optimierungsstrategie. Jetzt Beratung anfragen!"
+    },
+    {
+      "slug": "/leistungen/ki-website-optimierung",
+      "metaTitle": "KI Website Optimierung: Duale Sichtbarkeit maximieren | AIO",
+      "metaDescription": "Ihre Website für Google und ChatGPT optimieren. Steigern Sie Traffic und Conversions durch strategische KI-Website-Optimierung. Kostenfreies Audit anfordern!"
+    },
+    {
+      "slug": "/leistungen/llm-optimierung",
+      "metaTitle": "LLM Optimierung Website: In ChatGPT & Co. sichtbar werden",
+      "metaDescription": "Optimieren Sie Ihre Webinhalte für Large Language Models wie ChatGPT. Spezifische LLM-Optimierung für mehr Zitate und Traffic. Jetzt Analyse anfordern!"
+    },
+    {
+      "slug": "/leistungen/ki-seo",
+      "metaTitle": "Künstliche Intelligenz SEO: KI-gestützte Suchmaschinenoptimierung",
+      "metaDescription": "SEO mit KI-Power: Nutzen Sie AI-Technologien für bessere Rankings und höhere Conversions. Profitieren Sie von datengetriebener SEO-Strategie. Jetzt starten!"
+    },
+    {
+      "slug": "/leistungen/prompt-engineering",
+      "metaTitle": "Prompt Engineering für Webinhalte: ChatGPT optimal nutzen",
+      "metaDescription": "Steigern Sie Effizienz und Qualität Ihrer Webinhalte durch professionelles Prompt Engineering. Workshops und Beratung für Teams. Termin vereinbaren!"
+    },
+    {
+      "slug": "/leistungen/ki-content-marketing",
+      "metaTitle": "KI Content Marketing B2B: Effiziente Inhaltsstrategien",
+      "metaDescription": "KI-Texte für Ihre Unternehmenswebsite: Hochwertige B2B-Inhalte effizienter erstellen und Conversion-Raten steigern. Content-Strategie anfragen!"
+    },
+    {
+      "slug": "/blog",
+      "metaTitle": "Blog: Expertenwissen zu KI-Optimierung | AIO Consulting",
+      "metaDescription": "Aktuelle Insights, Fallstudien und Best Practices zur Optimierung von Websites für Google und KI-Assistenten. Jetzt Newsletter abonnieren!"
+    },
+    {
+      "slug": "/kontakt",
+      "metaTitle": "Kontakt: Sprechen Sie mit unseren KI-Optimierungsexperten",
+      "metaDescription": "Fragen zur KI-Optimierung Ihrer Website? Kontaktieren Sie unser Expertenteam für ein unverbindliches Erstgespräch. Wir melden uns innerhalb von 24h!"
+    },
+    {
+      "slug": "/ueber-uns",
+      "metaTitle": "Über uns: Ihre Experten für KI-Website-Optimierung im DACH-Raum",
+      "metaDescription": "AIO Consulting: Spezialisierte Agentur für KI-Website-Optimierung, LLM-Optimierung und KI-Content-Marketing. Lernen Sie unser Expertenteam kennen!"
+    },
+    {
+      "slug": "/impressum",
+      "metaTitle": "Impressum | AIO Consulting",
+      "metaDescription": "Impressum und rechtliche Informationen der AIO Consulting GmbH. Hier finden Sie alle gesetzlich vorgeschriebenen Angaben zu unserem Unternehmen."
+    },
+    {
+      "slug": "/datenschutz",
+      "metaTitle": "Datenschutzerklärung | AIO Consulting",
+      "metaDescription": "Informationen zum Datenschutz bei AIO Consulting. Erfahren Sie, wie wir mit Ihren Daten umgehen und welche Rechte Sie haben."
+    }
+  ]
+}

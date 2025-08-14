@@ -19,7 +19,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">{company.name}</h3>
             <p className="text-gray-300 mb-4">
@@ -76,6 +76,52 @@ const Footer = () => {
                 )}
               </div>
             )}
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold mb-4">Leistungen</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link 
+                  href="/leistungen/ki-content-marketing" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  KI-Content-Marketing
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/leistungen/ki-seo" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  KI-SEO
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/leistungen/llm-optimierung" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  LLM-Optimierung
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/leistungen/prompt-engineering" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Prompt Engineering
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  href="/leistungen" 
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Alle Leistungen
+                </Link>
+              </li>
+            </ul>
           </div>
 
           <div>

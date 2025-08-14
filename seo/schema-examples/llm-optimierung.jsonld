@@ -1,0 +1,101 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.aio-consulting.de/leistungen/llm-optimierung/#service",
+  "name": "LLM-Optimierung Website",
+  "url": "https://www.aio-consulting.de/leistungen/llm-optimierung",
+  "description": "Spezialisierter Prozess zur Optimierung von Webinhalten für Large Language Models wie ChatGPT und Google Gemini, um in KI-generierten Antworten bevorzugt zitiert zu werden.",
+  "provider": {
+    "@id": "https://www.aio-consulting.de/#organization"
+  },
+  "serviceType": "Website-Optimierung",
+  "category": "Digital Marketing",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Deutschland"
+    },
+    {
+      "@type": "Country",
+      "name": "Österreich"
+    },
+    {
+      "@type": "Country",
+      "name": "Schweiz"
+    }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "name": "LLM-Optimierung Website",
+    "description": "Umfassende Optimierung Ihrer Webinhalte für maximale Sichtbarkeit in KI-Assistenten wie ChatGPT und Google Gemini.",
+    "price": "4800.00",
+    "priceCurrency": "EUR",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "4800.00",
+      "priceCurrency": "EUR",
+      "valueAddedTaxIncluded": false
+    },
+    "itemOffered": {
+      "@type": "Service",
+      "name": "LLM-Optimierung Website Basispaket",
+      "description": "Analyse, Strategie und Implementierung der wichtigsten LLM-Optimierungsmaßnahmen für Ihre Website."
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "LLM-Optimierungsleistungen",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "LLM-Readiness-Audit",
+          "description": "Umfassende Analyse Ihrer Website hinsichtlich LLM-Kompatibilität und Optimierungspotenzial."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Strukturelle Optimierung",
+          "description": "Neustrukturierung von Inhalten in klar definierte, semantische Abschnitte für bessere Extrahierbarkeit."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Semantische Anreicherung",
+          "description": "Integration relevanter Entitäten und Fachbegriffe für besseres KI-Verständnis."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Technische LLM-Optimierung",
+          "description": "Implementierung von strukturierten Daten und semantischer HTML-Auszeichnung für verbesserte maschinelle Lesbarkeit."
+        }
+      }
+    ]
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://www.aio-consulting.de/kontakt",
+    "providesService": {
+      "@id": "https://www.aio-consulting.de/leistungen/llm-optimierung/#service"
+    },
+    "serviceLocation": {
+      "@type": "Place",
+      "name": "AIO Consulting Büro",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Elisabeth-Selbert-Str. 17",
+        "addressLocality": "Mülheim an der Ruhr",
+        "postalCode": "45473",
+        "addressCountry": "DE"
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.aio-consulting.de/#organization",
+  "name": "AIO Consulting",
+  "url": "https://www.aio-consulting.de/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.aio-consulting.de/images/logo.png",
+    "width": 600,
+    "height": 180
+  },
+  "legalName": "AIO Consulting GmbH",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Elisabeth-Selbert-Str. 17",
+    "addressLocality": "Mülheim an der Ruhr",
+    "postalCode": "45473",
+    "addressCountry": "DE"
+  },
+  "telephone": "+49 1637516883",
+  "email": "info@aio-consulting.de",
+  "sameAs": [
+    "https://www.facebook.com/aio-consulting",
+    "https://www.linkedin.com/company/aio-consulting",
+    "https://twitter.com/aio_consulting",
+    "https://www.instagram.com/aio_consulting"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+49 1637516883",
+    "contactType": "customer service",
+    "email": "info@aio-consulting.de",
+    "availableLanguage": ["German", "English"]
+  },
+  "knowsAbout": [
+    "KI-Website-Optimierung",
+    "LLM-Optimierung",
+    "KI-SEO",
+    "Prompt Engineering",
+    "KI-Content-Marketing"
+  ],
+  "serviceArea": [
+    "Deutschland",
+    "Österreich",
+    "Schweiz"
+  ],
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Deutschland"
+    },
+    {
+      "@type": "Country",
+      "name": "Österreich"
+    },
+    {
+      "@type": "Country",
+      "name": "Schweiz"
+    }
+  ]
+}

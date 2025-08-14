@@ -1,0 +1,101 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.aio-consulting.de/leistungen/ki-seo/#service",
+  "name": "KI-gestützte Suchmaschinenoptimierung",
+  "url": "https://www.aio-consulting.de/leistungen/ki-seo",
+  "description": "Strategische Integration von KI-Technologien in SEO-Prozesse für präzisere Nutzerintentionsanalyse, semantische Content-Optimierung und verbesserte Rankings in modernen Suchmaschinen.",
+  "provider": {
+    "@id": "https://www.aio-consulting.de/#organization"
+  },
+  "serviceType": "Suchmaschinenoptimierung",
+  "category": "Digital Marketing",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Deutschland"
+    },
+    {
+      "@type": "Country",
+      "name": "Österreich"
+    },
+    {
+      "@type": "Country",
+      "name": "Schweiz"
+    }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "name": "KI-gestützte Suchmaschinenoptimierung",
+    "description": "Umfassende SEO-Strategie mit Integration von KI-Technologien für verbesserte Sichtbarkeit und höhere Conversions.",
+    "price": "5500.00",
+    "priceCurrency": "EUR",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "5500.00",
+      "priceCurrency": "EUR",
+      "valueAddedTaxIncluded": false
+    },
+    "itemOffered": {
+      "@type": "Service",
+      "name": "KI-gestützte Suchmaschinenoptimierung Basispaket",
+      "description": "Analyse, Strategie und Implementierung der wichtigsten KI-SEO-Maßnahmen für Ihre Website."
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "KI-SEO-Leistungen",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Datengetriebene Keyword-Analyse",
+          "description": "KI-gestützte Identifikation von High-Potential-Keywords und semantische Cluster-Analyse."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Semantische Content-Optimierung",
+          "description": "KI-gestützte Content-Analyse und Optimierung für umfassende Themenabdeckung."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Technische SEO mit KI-Unterstützung",
+          "description": "Implementierung von Schema.org und strukturierten Daten für verbesserte semantische Erfassung."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "KI-gestütztes Performance-Monitoring",
+          "description": "Echtzeit-Tracking mit KI-Anomalieerkennung und automatisierte Reporting-Systeme."
+        }
+      }
+    ]
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://www.aio-consulting.de/kontakt",
+    "providesService": {
+      "@id": "https://www.aio-consulting.de/leistungen/ki-seo/#service"
+    },
+    "serviceLocation": {
+      "@type": "Place",
+      "name": "AIO Consulting Büro",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Elisabeth-Selbert-Str. 17",
+        "addressLocality": "Mülheim an der Ruhr",
+        "postalCode": "45473",
+        "addressCountry": "DE"
+      }
+    }
+  }
+}

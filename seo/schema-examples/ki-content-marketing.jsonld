@@ -1,0 +1,101 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.aio-consulting.de/leistungen/ki-content-marketing/#service",
+  "name": "KI-Content-Marketing",
+  "url": "https://www.aio-consulting.de/leistungen/ki-content-marketing",
+  "description": "Strategischer Ansatz zur Entwicklung, Erstellung und Optimierung von B2B-Fachinhalten mithilfe künstlicher Intelligenz für maximale Effizienz und Wirksamkeit.",
+  "provider": {
+    "@id": "https://www.aio-consulting.de/#organization"
+  },
+  "serviceType": "Content-Marketing",
+  "category": "Digital Marketing",
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "Deutschland"
+    },
+    {
+      "@type": "Country",
+      "name": "Österreich"
+    },
+    {
+      "@type": "Country",
+      "name": "Schweiz"
+    }
+  ],
+  "offers": {
+    "@type": "Offer",
+    "name": "KI-Content-Marketing",
+    "description": "Entwicklung und Umsetzung einer KI-gestützten Content-Strategie für Ihr B2B-Unternehmen.",
+    "price": "4500.00",
+    "priceCurrency": "EUR",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "price": "4500.00",
+      "priceCurrency": "EUR",
+      "valueAddedTaxIncluded": false
+    },
+    "itemOffered": {
+      "@type": "Service",
+      "name": "KI-Content-Marketing Basispaket",
+      "description": "Analyse, Strategie und Implementierung einer KI-gestützten Content-Marketing-Lösung für Ihre B2B-Website."
+    }
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "KI-Content-Marketing-Leistungen",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Datenbasierte Content-Strategieentwicklung",
+          "description": "KI-gestützte Marktanalyse und Entwicklung einer maßgeschneiderten Content-Roadmap."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "KI-gestützte Content-Produktion",
+          "description": "Entwicklung von Prompt-Templates und semi-automatisierte Erstellung von Fachinhalten."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Content-Distribution und -Optimierung",
+          "description": "Intelligente Verteilung und kontinuierliche Leistungsoptimierung Ihrer Inhalte."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "B2B-Content-Spezialformate",
+          "description": "Erstellung von Whitepapers, Case Studies und technischen Leitfäden mit KI-Unterstützung."
+        }
+      }
+    ]
+  },
+  "availableChannel": {
+    "@type": "ServiceChannel",
+    "serviceUrl": "https://www.aio-consulting.de/kontakt",
+    "providesService": {
+      "@id": "https://www.aio-consulting.de/leistungen/ki-content-marketing/#service"
+    },
+    "serviceLocation": {
+      "@type": "Place",
+      "name": "AIO Consulting Büro",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Elisabeth-Selbert-Str. 17",
+        "addressLocality": "Mülheim an der Ruhr",
+        "postalCode": "45473",
+        "addressCountry": "DE"
+      }
+    }
+  }
+}

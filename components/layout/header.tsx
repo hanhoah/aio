@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -44,6 +44,7 @@ const Header = () => {
             <NavLinks
               className="text-lg"
               onClick={() => setIsMenuOpen(false)}
+              isMobile={true}
             />
           </nav>
         </div>
@@ -55,9 +56,41 @@ const Header = () => {
 type NavLinksProps = {
   className?: string
   onClick?: () => void
+  isMobile?: boolean
 }
 
-const NavLinks = ({ className, onClick }: NavLinksProps) => {
+const NavLinks = ({ className, onClick, isMobile = false }: NavLinksProps) => {
+  const [servicesOpen, setServicesOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    if (!isMobile) {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+          setServicesOpen(false)
+        }
+      }
+      document.addEventListener('mousedown', handleClickOutside)
+      return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    }
+  }, [isMobile])
+
+  // Services dropdown items
+  const serviceItems = [
+    { href: "/leistungen/ki-content-marketing", label: "KI-Content-Marketing" },
+    { href: "/leistungen/ki-seo", label: "KI-SEO" },
+    { href: "/leistungen/llm-optimierung", label: "LLM-Optimierung" },
+    { href: "/leistungen/prompt-engineering", label: "Prompt Engineering" }
+  ]
+
+  // Toggle dropdown for mobile
+  const handleServicesToggle = () => {
+    setServicesOpen(!servicesOpen)
+  }
+
   return (
     <>
       <Link
@@ -67,13 +100,56 @@ const NavLinks = ({ className, onClick }: NavLinksProps) => {
       >
         Startseite
       </Link>
-      <Link
-        href="/#leistungen"
-        className={cn("hover:text-primary transition-colors", className)}
-        onClick={onClick}
-      >
-        Leistungen
-      </Link>
+      
+      {/* Services dropdown */}
+      <div className="relative" ref={dropdownRef}>
+        <button
+          className={cn(
+            "flex items-center hover:text-primary transition-colors", 
+            className
+          )}
+          onClick={handleServicesToggle}
+          onMouseEnter={() => !isMobile && setServicesOpen(true)}
+        >
+          Leistungen
+          <ChevronDown className="ml-1 h-4 w-4" />
+        </button>
+        
+        {servicesOpen && (
+          <div 
+            className={cn(
+              "absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 z-10",
+              isMobile && "relative shadow-none w-full pl-4"
+            )}
+            onMouseLeave={() => !isMobile && setServicesOpen(false)}
+          >
+            <Link
+              href="/leistungen"
+              className="block px-4 py-2 text-sm text-indigo-700 font-medium border-b border-gray-100"
+              onClick={() => {
+                setServicesOpen(false)
+                onClick && onClick()
+              }}
+            >
+              Alle Leistungen
+            </Link>
+            {serviceItems.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                onClick={() => {
+                  setServicesOpen(false)
+                  onClick && onClick()
+                }}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+      
       <Link
         href="/#ueber-uns"
         className={cn("hover:text-primary transition-colors", className)}
