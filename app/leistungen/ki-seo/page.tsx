@@ -127,6 +127,7 @@ export default function KISEOPage() {
         title="Künstliche Intelligenz SEO: KI-gestützte Suchmaschinenoptimierung"
         description="Künstliche Intelligenz SEO (KI-SEO) ist die strategische Integration von KI-Technologien in klassische SEO-Prozesse, um Websites für moderne Suchmaschinen zu optimieren. Diese Methodik nutzt maschinelles Lernen, Natural Language Processing und prädiktive Analysen, um Keywordpotenziale zu identifizieren, Nutzerintentionen präziser zu bedienen und Inhalte zu erstellen, die sowohl für traditionelle Suchmaschinen als auch für KI-Assistenten optimiert sind."
         ctaText="Kostenfreies SEO-Audit anfordern"
+        backgroundImage="/images/hero-ki-seo.png"
       />
       
       {/* Service Features */}

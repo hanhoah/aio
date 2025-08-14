@@ -127,6 +127,7 @@ export default function KIContentMarketingPage() {
         title="KI-Content-Marketing B2B: Intelligente Inhaltsstrategien für Unternehmen"
         description="KI-Content-Marketing für B2B-Unternehmen ist ein strategischer Ansatz, der künstliche Intelligenz zur Entwicklung, Erstellung und Optimierung von Fachinhalten nutzt. Dieser Ansatz kombiniert datengetriebene Insights mit KI-gestützter Contenterstellung, um hochrelevante, zielgruppenspezifische Inhalte effizienter zu produzieren."
         ctaText="Content-Strategie anfragen"
+        backgroundImage="/images/hero-ki-content-marketing.png"
       />
       
       {/* Service Features */}

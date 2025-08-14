@@ -127,6 +127,7 @@ export default function PromptEngineeringPage() {
         title="Prompt Engineering für Webinhalte: KI-optimierte Textstrategien"
         description="Prompt Engineering für Webinhalte ist die strategische Entwicklung und Optimierung von Anweisungen (Prompts) für KI-Systeme wie ChatGPT oder Google Gemini, um hochwertige, SEO-optimierte und zielgruppenrelevante Webinhalte zu erstellen. Diese Spezialdisziplin kombiniert linguistisches Verständnis mit technischem Know-how, um KI-Tools präzise zu steuern und konsistente, markengerechte Inhalte zu generieren."
         ctaText="Workshop-Angebot anfordern"
+        backgroundImage="/images/hero-prompt-engineering.png"
       />
       
       {/* Service Features */}

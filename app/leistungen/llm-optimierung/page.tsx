@@ -107,6 +107,7 @@ export default function LLMOptimizationPage() {
         title="LLM-Optimierung Website: Maximale Sichtbarkeit in KI-Assistenten"
         description="LLM-Optimierung für Websites ist der spezialisierte Prozess, Webinhalte für Large Language Models (LLMs) wie ChatGPT und Google Gemini zu optimieren, um in KI-generierten Antworten bevorzugt zitiert zu werden."
         ctaText="Kostenloses LLM-Audit anfordern"
+        backgroundImage="/images/hero-llm-optimierung.png"
       />
       
       {/* Main Content with Sidebar */}
