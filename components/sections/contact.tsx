@@ -33,11 +33,42 @@ const Contact = () => {
     resolver: zodResolver(formSchema),
   })
 
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
+
   const onSubmit = async (data: FormValues) => {
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    console.log(data)
-    reset()
+    try {
+      setSubmitError(null);
+      
+      // Anfrage an API-Route senden
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      // Antwort parsen
+      const responseData = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(responseData.error || 'Ein Fehler ist aufgetreten beim Senden der Nachricht.');
+      }
+
+      // Erfolgreiche Submission - Form wird zurückgesetzt
+      reset();
+      
+      // Bei Erfolg gibt es keine spezielle Aktion, da das isSubmitSuccessful 
+      // automatisch auf true gesetzt wird und die Erfolgsansicht angezeigt wird
+    } catch (error) {
+      console.error('Fehler beim Absenden des Formulars:', error);
+      setSubmitError(
+        error instanceof Error 
+          ? error.message 
+          : 'Ein unbekannter Fehler ist aufgetreten. Bitte kontaktieren Sie uns direkt per E-Mail an info@aio-consulting.de.'
+      );
+      // Form nicht zurücksetzen, damit der Benutzer es erneut versuchen kann
+    }
   }
 
   return (
@@ -56,7 +87,10 @@ const Contact = () => {
             <div className="text-center py-8">
               <h3 className="text-2xl font-bold text-primary mb-4">Vielen Dank für Ihre Nachricht!</h3>
               <p className="text-gray-700 mb-6">
-                Wir haben Ihre Anfrage erhalten und werden uns in Kürze bei Ihnen melden.
+                Wir haben Ihre Anfrage erhalten und werden uns zeitnah bei Ihnen melden.
+              </p>
+              <p className="text-gray-600 text-sm mb-6">
+                Falls Sie keine Antwort erhalten, kontaktieren Sie uns bitte direkt unter <span className="font-medium">info@aio-consulting.de</span>
               </p>
               <Button 
                 onClick={() => reset({}, { keepValues: false })}
@@ -105,6 +139,12 @@ const Contact = () => {
                 )}
               </div>
 
+              {submitError && (
+                <div className="p-3 bg-red-50 border border-red-200 rounded-md text-red-600 mb-4">
+                  {submitError}
+                </div>
+              )}
+              
               <Button 
                 type="submit" 
                 className="w-full font-semibold"

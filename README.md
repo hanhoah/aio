@@ -93,7 +93,42 @@ Das Projekt ist für automatisches Deployment auf Vercel konfiguriert:
 
 ### Umgebungsvariablen
 
-Kopiere die Variablen aus `.env.example` und füge sie in den Vercel-Projekteinstellungen unter "Environment Variables" hinzu.
+Kopiere die Variablen aus `.env.local.example` und füge sie in den Vercel-Projekteinstellungen unter "Environment Variables" hinzu.
+
+### E-Mail-Konfiguration für Kontaktformular
+
+Das Kontaktformular sendet E-Mails über Gmail SMTP. Folge diesen Schritten, um die E-Mail-Funktionalität einzurichten:
+
+1. **Gmail App-Passwort einrichten**:
+   - Aktiviere die Zwei-Faktor-Authentifizierung für dein Google-Konto unter [https://myaccount.google.com/security](https://myaccount.google.com/security)
+   - Erstelle ein App-Passwort unter [https://myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
+   - Wähle "Andere (benutzerdefiniert)" und gib "AIO Consulting Website" als Namen ein
+   - Kopiere das generierte 16-stellige Passwort
+
+2. **Umgebungsvariablen einrichten**:
+   - Fülle die `.env.local` Datei mit deinen Gmail-Daten aus:
+     ```
+     SMTP_HOST=smtp.gmail.com
+     SMTP_PORT=587
+     SMTP_USER=deine-gmail-adresse@gmail.com
+     SMTP_PASSWORD=dein-16-stelliges-app-passwort
+     CONTACT_EMAIL=info@aio-consulting.de
+     ```
+   - Für Produktionsumgebung: Füge diese Variablen zu den Vercel-Umgebungsvariablen hinzu
+
+3. **E-Mail-Weiterleitung einrichten**:
+   - Logge dich bei deinem Domain-Provider (United Domains) ein
+   - Richte eine E-Mail-Weiterleitung für info@aio-consulting.de zu deiner Gmail-Adresse ein
+
+4. **Testen**:
+   - Starte den Entwicklungsserver mit `pnpm dev`
+   - Fülle das Kontaktformular aus und sende es ab
+   - Überprüfe, ob die E-Mail an deine Gmail-Adresse weitergeleitet wurde
+
+**Fehlerbehebung**:
+- Überprüfe die Server-Logs im Terminal oder in den Vercel-Logs auf Fehlermeldungen
+- Stelle sicher, dass das App-Passwort korrekt ist
+- Prüfe, ob die E-Mail-Weiterleitung bei United Domains korrekt eingerichtet ist
 
 ## GitHub-Repository einrichten
 
