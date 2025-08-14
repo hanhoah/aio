@@ -186,7 +186,8 @@ export default function KIContentMarketingPage() {
       {/* FAQ Section */}
       <FAQSection 
         questions={faqQuestions}
-        title="FAQs zum KI-Content-Marketing im B2B"
+        title="FAQs zum KI-Content-Marketing"
+        backgroundImage="/images/hero-ki-content-marketing.png"
       />
       
       {/* CTA Section */}

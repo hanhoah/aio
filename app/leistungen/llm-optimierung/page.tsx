@@ -183,7 +183,8 @@ export default function LLMOptimizationPage() {
       {/* FAQ Section */}
       <FAQSection 
         questions={faqQuestions}
-        title="Häufig gestellte Fragen zur LLM-Optimierung"
+        title="FAQs zur LLM-Optimierung"
+        backgroundImage="/images/hero-llm-optimierung.png"
       />
       
       {/* CTA Section */}

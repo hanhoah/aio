@@ -194,6 +194,7 @@ export default function KISEOPage() {
       <FAQSection 
         questions={faqQuestions}
         title="FAQs zum KI-gestützten SEO"
+        backgroundImage="/images/hero-ki-seo.png"
       />
       
       {/* CTA Section */}

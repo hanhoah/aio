@@ -194,6 +194,7 @@ export default function PromptEngineeringPage() {
       <FAQSection 
         questions={faqQuestions}
         title="FAQs zum Prompt Engineering"
+        backgroundImage="/images/hero-prompt-engineering.png"
       />
       
       {/* CTA Section */}
