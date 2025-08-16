@@ -31,7 +31,7 @@ export async function POST(request: Request) {
     // E-Mail-Inhalt
     const mailOptions = {
       from: process.env.SMTP_USER, // Absender ist Ihre Gmail-Adresse
-      to: process.env.CONTACT_EMAIL || 'info@aio-consulting.de', // Wird an die Weiterleitungsadresse gesendet
+      to: process.env.CONTACT_EMAIL || 'hanniboy@gmail.com', // Direkt an Gmail senden
       replyTo: email, // Antworten gehen direkt an den Absender der Anfrage
       subject: `[AIO Consulting Website] Neue Anfrage von ${name}`,
       text: `Name: ${name}\nE-Mail: ${email}\n\nNachricht:\n${message}\n\n--\nDiese E-Mail wurde über das Kontaktformular auf aio-consulting.de gesendet.`,
@@ -73,7 +73,7 @@ export async function POST(request: Request) {
           host: process.env.SMTP_HOST,
           port: process.env.SMTP_PORT,
           user: process.env.SMTP_USER?.substring(0, 3) + '***',
-          to: process.env.CONTACT_EMAIL
+          to: process.env.CONTACT_EMAIL || 'hanniboy@gmail.com'
         });
       }
       
@@ -82,7 +82,7 @@ export async function POST(request: Request) {
         messageId: info.messageId,
         response: info.response,
         timestamp: new Date().toISOString(),
-        recipient: process.env.CONTACT_EMAIL || 'info@aio-consulting.de'
+        recipient: process.env.CONTACT_EMAIL || 'hanniboy@gmail.com'
       });
       
       return NextResponse.json(
@@ -96,7 +96,7 @@ export async function POST(request: Request) {
         stack: emailError instanceof Error ? emailError.stack : undefined,
         timestamp: new Date().toISOString(),
         sender: process.env.SMTP_USER?.substring(0, 3) + '***',
-        recipient: process.env.CONTACT_EMAIL || 'info@aio-consulting.de'
+        recipient: process.env.CONTACT_EMAIL || 'hanniboy@gmail.com'
       });
       
       // Kontaktdaten für Debugging loggen

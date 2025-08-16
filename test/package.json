@@ -1,0 +1,14 @@
+{
+  "name": "contact-form-test",
+  "version": "1.0.0",
+  "description": "Test for the contact form functionality",
+  "type": "module",
+  "scripts": {
+    "test": "node test-contact-form.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "nodemailer": "^7.0.5",
+    "playwright": "^1.40.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "contact-form-test",
+  "version": "1.0.0",
+  "description": "Test for the contact form functionality",
+  "type": "module",
+  "scripts": {
+    "test": "node contact-form-test.js"
+  },
+  "dependencies": {
+    "playwright": "^1.37.0"
+  }
+}
