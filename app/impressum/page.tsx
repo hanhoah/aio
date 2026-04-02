@@ -21,7 +21,8 @@ export default function Impressum() {
         <p>
           {company.name}<br />
           {company.street}<br />
-          {company.zipCode} {company.city}
+          {company.city}<br />
+          {company.country}
         </p>
         
         
@@ -36,7 +37,8 @@ export default function Impressum() {
         <p>
           {responsibleForContent.name}<br />
           {responsibleForContent.street}<br />
-          {responsibleForContent.zipCode} {responsibleForContent.city}
+          {responsibleForContent.city}<br />
+          {responsibleForContent.country}
         </p>
         
         <h2 className="text-2xl font-semibold mt-8 mb-4">Streitschlichtung</h2>

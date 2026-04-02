@@ -1,28 +1,28 @@
 {
   "company": {
-    "name": "AIO Consulting",
+    "name": "Han Hoa Huynh",
     "legalForm": "",
-    "street": "Elisabeth-Selbert-Str. 17",
-    "zipCode": "45473",
-    "city": "Mülheim an der Ruhr",
-    "country": "Deutschland",
+    "street": "152/65 đường Nguyễn Văn Thương, Phường 25",
+    "zipCode": "",
+    "city": "Bình Thạnh, Ho Chi Minh City",
+    "country": "Vietnam",
     "email": "info@aio-consulting.de",
     "phone": "+49 (0) 1637516883",
     "fax": "",
     "website": "https://www.aio-consulting.de"
   },
   "registration": {
-    "court": "Amtsgericht Musterstadt",
-    "number": "HRB 123456",
-    "vatId": "DE123456789",
-    "taxId": "1234567890"
+    "court": "",
+    "number": "",
+    "vatId": "",
+    "taxId": ""
   },
   "responsibleForContent": {
     "name": "Han Hoa Huynh",
-    "street": "Elisabeth-Selbert-Str. 17",
-    "zipCode": "45473",
-    "city": "Mülheim an der Ruhr",
-    "country": "Deutschland",
+    "street": "152/65 đường Nguyễn Văn Thương, Phường 25",
+    "zipCode": "",
+    "city": "Bình Thạnh, Ho Chi Minh City",
+    "country": "Vietnam",
     "email": "info@aio-consulting.de"
   },
   "dataProtection": {
@@ -32,12 +32,12 @@
       "phone": "+49 (0) 1637516883"
     },
     "hostingProvider": {
-      "name": "Muster Hosting GmbH",
-      "street": "Hostingstraße 1",
-      "zipCode": "54321",
-      "city": "Serverstadt",
-      "country": "Deutschland",
-      "website": "https://muster-hosting.de"
+      "name": "Vercel Inc.",
+      "street": "440 N Barranca Ave #4133",
+      "zipCode": "91723",
+      "city": "Covina, CA",
+      "country": "USA",
+      "website": "https://vercel.com"
     },
     "cookies": {
       "necessary": [
@@ -49,11 +49,11 @@
       ],
       "statistics": [
         {
-          "name": "Google Analytics",
-          "purpose": "Analyse des Nutzerverhaltens",
-          "duration": "2 Jahre",
+          "name": "Vercel Analytics",
+          "purpose": "Anonyme Analyse des Nutzerverhaltens",
+          "duration": "30 Tage",
           "thirdParty": true,
-          "provider": "Google LLC"
+          "provider": "Vercel Inc."
         }
       ]
     }
@@ -64,8 +64,8 @@
       "platform": "https://ec.europa.eu/consumers/odr/"
     },
     "copyright": {
-      "year": 2023,
-      "holder": "AIO Consulting GmbH"
+      "year": 2025,
+      "holder": "Han Hoa Huynh"
     }
   },
   "socialMedia": {

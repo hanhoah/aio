@@ -1,45 +1,110 @@
 import React from "react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
 import Image from "next/image"
+import Link from "next/link"
+import { MapPin, Cpu, Zap } from "lucide-react"
+
+const stats = [
+  { value: "17.000+", label: "Community-Nutzer auf KI-System" },
+  { value: "4 Jahre", label: "Aktive KI-Entwicklung" },
+  { value: "100%", label: "Remote & direkt" },
+]
+
+const highlights = [
+  { icon: MapPin, text: "Kein Agentur-Overhead — Sie sprechen immer direkt mit mir" },
+  { icon: Cpu, text: "Claude API, OpenAI, n8n und pgvector im täglichen Produktiveinsatz" },
+  { icon: Zap, text: "KI-beschleunigt: Was früher 3 Monate dauerte, liefere ich in 4–8 Wochen" },
+]
 
 const About = () => {
   return (
-    <section id="ueber-uns" className="py-20 bg-gradient-to-b from-gray-100 to-gray-50">
+    <section id="ueber-mich" className="py-24 bg-gradient-to-b from-white to-slate-50">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Über uns</h2>
-            <p className="text-lg text-gray-800 mb-6">
-              Die AIO Consulting steht für kreative Lösungen und technische Exzellenz. 
-              Als Full-Service-Digitalagentur unterstützen wir Unternehmen jeder Größe 
-              dabei, im digitalen Zeitalter erfolgreich zu sein.
-            </p>
-            <p className="text-lg text-gray-800 mb-6">
-              Unser Team aus erfahrenen Entwicklern, Designern und Marketing-Experten 
-              arbeitet Hand in Hand, um maßgeschneiderte Konzepte zu entwickeln, die 
-              perfekt zu Ihren Zielen und Anforderungen passen.
-            </p>
-            <p className="text-lg text-gray-800 mb-8">
-              Wir glauben an langfristige Partnerschaften und setzen auf transparente 
-              Kommunikation und agile Arbeitsmethoden, um Ihr Projekt zum Erfolg zu führen.
-            </p>
-            <Button asChild>
-              <Link href="/#kontakt">
-                Lernen Sie uns kennen
-              </Link>
-            </Button>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+          {/* Portrait */}
+          <div className="relative order-2 lg:order-1">
+            <div className="relative mx-auto max-w-[360px] lg:max-w-none">
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-100 to-cyan-50 -rotate-2 scale-[1.02]" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-blue-500/10 to-cyan-500/10 rotate-1" />
+
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-gradient-to-br from-slate-800 to-blue-950 border border-blue-200/50">
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 to-blue-950">
+                  <div className="w-28 h-28 rounded-full bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center mb-5 shadow-lg shadow-blue-500/30">
+                    <span className="text-white font-display font-bold text-4xl">HH</span>
+                  </div>
+                  <p className="text-slate-400 text-sm font-mono tracking-wider">Han Hoa Huynh</p>
+                  <p className="text-slate-500 text-xs mt-1">KI-Entwickler & Berater</p>
+                </div>
+                <Image
+                  src="/images/han-portrait.jpg"
+                  alt="Han Hoa Huynh — KI-Entwickler & Berater"
+                  fill
+                  className="object-cover object-top"
+                  style={{ zIndex: 1 }}
+                />
+              </div>
+
+              <div className="absolute -bottom-4 -right-4 lg:-right-6 bg-white rounded-xl shadow-lg border border-blue-100 px-4 py-3 z-10">
+                <p className="text-xs text-slate-500 font-medium">aio steht für</p>
+                <p className="text-sm font-bold text-blue-600 font-display">AI Optimization</p>
+              </div>
+            </div>
           </div>
-          
-          <div className="rounded-lg overflow-hidden shadow-xl">
-            <Image 
-              src="/images/aboutus.png"
-              alt="AIO Consulting Team"
-              width={1200}
-              height={675}
-              className="w-full h-auto"
-              priority
-            />
+
+          {/* Story */}
+          <div className="order-1 lg:order-2">
+            <div className="mb-3 text-sm font-mono text-blue-600 tracking-wider uppercase">
+              Über mich
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-slate-900 leading-tight">
+              Wer steckt hinter aio?
+            </h2>
+
+            <div className="space-y-4 text-slate-600 text-base leading-relaxed mb-8">
+              <p>
+                Ich habe jahrelang gesehen, wie Unternehmen tausende Euro für KI-Projekte ausgaben, die{" "}
+                <strong className="text-slate-800">nie fertig wurden</strong> — weil Agenturen über-engineerten,
+                Freelancer verschwanden oder die Technologie nicht zum Problem passte.
+              </p>
+              <p>
+                2022 baute ich meinen ersten RAG-Bot — für eine Community mit{" "}
+                <strong className="text-slate-800">17.000 Mitgliedern</strong>. Er funktioniert heute noch.
+                Seitdem ist KI nicht mehr Experiment, sondern mein tägliches Werkzeug: Claude API, n8n,
+                pgvector, Next.js — im echten Produktiveinsatz.
+              </p>
+              <p>
+                <strong className="text-slate-800">Ich arbeite alleine.</strong> Das bedeutet: kein Overhead,
+                kein Telefonspiel zwischen Account-Manager und Entwickler, kein 3-monatiges Pflichtenheft.
+                Sie sprechen direkt mit der Person, die Ihre Lösung baut.
+              </p>
+            </div>
+
+            <ul className="space-y-3 mb-8">
+              {highlights.map(({ icon: Icon, text }) => (
+                <li key={text} className="flex items-center gap-3 text-slate-700">
+                  <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0">
+                    <Icon size={15} className="text-blue-600" />
+                  </div>
+                  <span className="text-sm">{text}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="grid grid-cols-3 gap-3 mb-8">
+              {stats.map(({ value, label }) => (
+                <div key={label} className="text-center p-4 rounded-xl bg-blue-50 border border-blue-100 hover:border-blue-200 transition-colors">
+                  <div className="text-xl font-bold text-blue-600 font-display leading-tight">{value}</div>
+                  <div className="text-xs text-slate-600 mt-1 leading-tight">{label}</div>
+                </div>
+              ))}
+            </div>
+
+            <Link
+              href="/#kontakt"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold transition-all duration-200 hover:-translate-y-0.5 cursor-pointer"
+            >
+              Sprechen wir über Ihr Projekt →
+            </Link>
           </div>
         </div>
       </div>

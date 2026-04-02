@@ -1,93 +1,119 @@
-import { 
-  Globe, 
-  Search, 
-  BrainCircuit,
-  PenSquare
+import {
+  Zap,
+  Bot,
+  Code2,
+  Search,
+  FileText,
+  Lightbulb,
 } from "lucide-react";
 
 export interface ServiceData {
   id: string;
-  icon: any; // Using any for the Lucide icon component
+  icon: any;
   title: string;
   description: string;
   link: string;
   isHighlighted?: boolean;
-  benefits?: string[]; // Optional benefits for the service overview page
+  benefits?: string[];
 }
 
 /**
- * Central data source for all services offered by AIO Consulting
- * This data is used across the website including:
- * - Homepage service section
- * - Services overview page
- * - Navigation menus
+ * SSOT: Alle Service-Daten für aio-consulting.de
+ * Genutzt auf: Homepage, /leistungen, Navigation, Footer
  */
 export const services: ServiceData[] = [
   {
-    id: "llm-optimierung",
-    icon: BrainCircuit,
-    title: "KI-Website-Optimierung",
-    description: "Optimierung Ihrer Website für das KI-Zeitalter, mit dualer Sichtbarkeit in Suchmaschinen und KI-Assistenten.",
-    link: "/leistungen/llm-optimierung",
+    id: "ki-prozessautomatisierung",
+    icon: Zap,
+    title: "KI-Prozessautomatisierung",
+    description:
+      "Ich automatisiere Ihre manuellen Prozesse mit n8n und Claude API — von der Rechnungsverarbeitung bis zum E-Mail-Routing. Einmalig gebaut, dauerhaft Kosten gespart.",
+    link: "/leistungen/ki-prozessautomatisierung",
     isHighlighted: true,
     benefits: [
-      "Erhöhte Zitierfrequenz in KI-Antworten",
-      "Verbesserte Informationsextraktion durch KI-Systeme",
-      "Erhöhte Themenautorität",
-      "Wettbewerbsvorsprung im wachsenden Markt der KI-gestützten Informationssuche"
-    ]
+      "50–80 % weniger Zeitaufwand bei Routinetätigkeiten",
+      "Fehlerquote sinkt auf nahezu null (kein manuelles Kopieren)",
+      "Automatisierungen laufen 24/7 ohne Ihr Zutun",
+      "ROI typischerweise nach 2–3 Monaten erreicht",
+    ],
   },
   {
-    id: "ki-seo",
+    id: "custom-ai-agents",
+    icon: Bot,
+    title: "Custom AI Agents & Chatbots",
+    description:
+      "Ich baue Ihnen einen eigenen KI-Assistenten, der Ihre internen Daten kennt — Wissensdatenbank, Kundenservice-Bot oder interner Recherche-Agent.",
+    link: "/leistungen/custom-ai-agents",
+    isHighlighted: true,
+    benefits: [
+      "KI antwortet auf Basis Ihrer eigenen Dokumente & Daten",
+      "Kundensupport-Volumen um bis zu 60 % reduzierbar",
+      "Nahtlose Integration in bestehende Systeme (Slack, Website, CRM)",
+      "Vollständige Kontrolle über Daten — kein Datenleck zu OpenAI",
+    ],
+  },
+  {
+    id: "ki-web-apps",
+    icon: Code2,
+    title: "KI-Web-Apps",
+    description:
+      "Maßgeschneiderte Web-Applikationen mit KI-Features: Dashboards, interne Tools, SaaS-Produkte — gebaut mit Next.js, TypeScript und direkter KI-Integration.",
+    link: "/leistungen/ki-web-apps",
+    benefits: [
+      "Fertige Web-App in 4–8 Wochen statt 3–6 Monaten",
+      "KI-Funktionen direkt eingebaut (kein nachträgliches Flickwerk)",
+      "Skalierbare Architektur, die mit Ihrem Unternehmen wächst",
+      "Vollständige Übergabe mit Code, Dokumentation und Training",
+    ],
+  },
+  {
+    id: "geo-ki-seo",
     icon: Search,
-    title: "KI-SEO",
-    description: "KI-gestützte Suchmaschinenoptimierung mit präziserer Nutzerintentionsanalyse und verbesserten Rankings in modernen Suchmaschinen.",
-    link: "/leistungen/ki-seo",
+    title: "GEO & KI-SEO",
+    description:
+      "Ihre Website soll nicht nur bei Google ranken — sondern auch in ChatGPT, Perplexity und Google AI Overviews erscheinen. Ich optimiere für das KI-Zeitalter.",
+    link: "/leistungen/geo-ki-seo",
     benefits: [
-      "Präzisere Datenanalyse und Entscheidungsfindung",
-      "Effizientere Prozesse durch Automatisierung",
-      "Höhere Wettbewerbsfähigkeit durch prädiktive Strategien",
-      "Bessere Anpassungsfähigkeit an Algorithmus-Updates"
-    ]
+      "Sichtbarkeit in KI-Suchmaschinen (ChatGPT, Perplexity, Gemini)",
+      "Strukturierte Daten & FAQ-Schema für maximale KI-Zitierrate",
+      "Content-Tiefe, die KI-Systeme als autoritativ einstufen",
+      "Monatliches Reporting mit messbaren Sichtbarkeits-KPIs",
+    ],
   },
   {
-    id: "ki-content-marketing",
-    icon: Globe,
-    title: "KI-Content-Marketing",
-    description: "Strategischer Einsatz von KI zur Entwicklung, Erstellung und Optimierung von B2B-Fachinhalten für maximale Effizienz.",
-    link: "/leistungen/ki-content-marketing",
+    id: "ki-content-automatisierung",
+    icon: FileText,
+    title: "KI-Content-Automatisierung",
+    description:
+      "Ich baue Ihnen ein automatisiertes Content-System: Von der Themenrecherche über die KI-gestützte Erstellung bis zur automatischen Veröffentlichung.",
+    link: "/leistungen/ki-content-automatisierung",
     benefits: [
-      "Reduzierung der Content-Erstellungszeit um 50-70%",
-      "Konsistente Markensprache über alle Inhalte hinweg",
-      "Datenbasierte Themenauswahl statt subjektiver Einschätzungen",
-      "Bewältigung größerer Content-Volumina ohne Personalaufstockung"
-    ]
+      "Content-Produktion um Faktor 3–5x skalieren ohne Mehraufwand",
+      "Konsistente Markensprache durch trainierte KI-Templates",
+      "Automatische Veröffentlichung auf Website, LinkedIn & Co.",
+      "Kosten pro Artikel um 60–70 % reduziert",
+    ],
   },
   {
-    id: "prompt-engineering",
-    icon: PenSquare,
-    title: "Prompt Engineering",
-    description: "Strategische Entwicklung von Prompts für KI-Systeme zur Erstellung hochwertiger, SEO-optimierter Webinhalte.",
-    link: "/leistungen/prompt-engineering",
+    id: "ki-beratung",
+    icon: Lightbulb,
+    title: "KI-Beratung & Strategie",
+    description:
+      "Sie wissen, dass KI Ihrem Unternehmen helfen kann — aber nicht wo anfangen? In 2 Stunden erstelle ich Ihre persönliche KI-Roadmap mit konkreten nächsten Schritten.",
+    link: "/leistungen/ki-beratung",
     benefits: [
-      "Signifikante Zeit- und Kostenersparnis bei der Content-Erstellung",
-      "Konsistentere Markensprache über alle Inhalte hinweg",
-      "Verbesserte SEO-Performance durch systematisch optimierte Texte",
-      "Höhere Skalierbarkeit der Content-Produktion"
-    ]
-  }
+      "Konkrete KI-Roadmap: was lohnt sich, was nicht",
+      "Priorisierte Quick-Wins mit sofort umsetzbaren Maßnahmen",
+      "Ehrliche Einschätzung ohne Vendor-Lock-in oder Upsell-Druck",
+      "Festpreis 300€ — kein stundenlanger Beratungsmarathon",
+    ],
+  },
 ];
 
-/**
- * Helper function to get a specific service by ID
- */
 export function getServiceById(id: string): ServiceData | undefined {
-  return services.find(service => service.id === id);
+  return services.find((service) => service.id === id);
 }
 
-/**
- * Helper function to get all service IDs
- */
 export function getAllServiceIds(): string[] {
-  return services.map(service => service.id);
+  return services.map((service) => service.id);
 }

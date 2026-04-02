@@ -3,50 +3,77 @@
 import React, { useState, useRef, useEffect } from "react"
 import Link from "next/link"
 import { Menu, X, ChevronDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { services } from "@/data/services"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 20)
+    window.addEventListener("scroll", handleScroll, { passive: true })
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white z-50 shadow-sm">
+    <header
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        isScrolled
+          ? "bg-white/95 backdrop-blur-sm shadow-sm border-b border-slate-100"
+          : "bg-transparent"
+      )}
+    >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="font-bold text-2xl text-primary">
-          AIO Consulting
+        <Link
+          href="/"
+          className={cn(
+            "font-display font-bold text-xl tracking-tight transition-colors",
+            isScrolled ? "text-slate-900" : "text-white"
+          )}
+        >
+          aio<span className={isScrolled ? "text-blue-600" : "text-cyan-400"}>-consulting</span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-8">
-          <NavLinks className="text-base font-medium" />
+        <nav className="hidden md:flex items-center space-x-6">
+          <NavLinks isScrolled={isScrolled} />
+          <Link
+            href="/#kontakt"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all duration-200 cursor-pointer"
+          >
+            Erstberatung — kostenlos
+          </Link>
         </nav>
 
-        {/* Mobile Navigation Toggle */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={toggleMenu}
+        {/* Mobile Toggle */}
+        <button
+          className={cn(
+            "md:hidden p-2 rounded-lg transition-colors",
+            isScrolled ? "text-slate-700 hover:bg-slate-100" : "text-white hover:bg-white/10"
+          )}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Menü schließen" : "Menü öffnen"}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </Button>
+        </button>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t">
-          <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <NavLinks
-              className="text-lg"
-              onClick={() => setIsMenuOpen(false)}
-              isMobile={true}
-            />
+        <div className="md:hidden bg-white border-t border-slate-100 shadow-lg">
+          <nav className="container mx-auto px-4 py-4 flex flex-col space-y-1">
+            <MobileNavLinks onClick={() => setIsMenuOpen(false)} />
+            <div className="pt-4 border-t border-slate-100 mt-2">
+              <Link
+                href="/#kontakt"
+                className="block w-full text-center px-5 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-colors cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Erstberatung — kostenlos
+              </Link>
+            </div>
           </nav>
         </div>
       )}
@@ -55,113 +82,121 @@ const Header = () => {
 }
 
 type NavLinksProps = {
-  className?: string
-  onClick?: () => void
-  isMobile?: boolean
+  isScrolled: boolean
 }
 
-const NavLinks = ({ className, onClick, isMobile = false }: NavLinksProps) => {
+const NavLinks = ({ isScrolled }: NavLinksProps) => {
   const [servicesOpen, setServicesOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  // Close dropdown when clicking outside
   useEffect(() => {
-    if (!isMobile) {
-      const handleClickOutside = (event: MouseEvent) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-          setServicesOpen(false)
-        }
-      }
-      document.addEventListener('mousedown', handleClickOutside)
-      return () => {
-        document.removeEventListener('mousedown', handleClickOutside)
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setServicesOpen(false)
       }
     }
-  }, [isMobile])
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
 
-  // Services dropdown items - dynamically generated from services data
-  const serviceItems = services.map(service => ({
-    href: service.link,
-    label: service.title
-  }))
-
-  // Toggle dropdown for mobile
-  const handleServicesToggle = () => {
-    setServicesOpen(!servicesOpen)
-  }
+  const linkClass = cn(
+    "text-sm font-medium transition-colors cursor-pointer",
+    isScrolled ? "text-slate-700 hover:text-blue-600" : "text-slate-300 hover:text-white"
+  )
 
   return (
     <>
-      <Link
-        href="/"
-        className={cn("hover:text-primary transition-colors", className)}
-        onClick={onClick}
-      >
-        Startseite
+      <Link href="/#leistungen" className={linkClass}>
+        Leistungen
       </Link>
-      
-      {/* Services dropdown */}
+
       <div className="relative" ref={dropdownRef}>
         <button
-          className={cn(
-            "flex items-center hover:text-primary transition-colors", 
-            className
-          )}
-          onClick={handleServicesToggle}
-          onMouseEnter={() => !isMobile && setServicesOpen(true)}
+          className={cn("flex items-center gap-1", linkClass)}
+          onMouseEnter={() => setServicesOpen(true)}
+          onClick={() => setServicesOpen(!servicesOpen)}
         >
-          Leistungen
-          <ChevronDown className="ml-1 h-4 w-4" />
+          Einzelne Services
+          <ChevronDown className={cn("h-3.5 w-3.5 transition-transform", servicesOpen && "rotate-180")} />
         </button>
-        
+
         {servicesOpen && (
-          <div 
-            className={cn(
-              "absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 z-10",
-              isMobile && "relative shadow-none w-full pl-4"
-            )}
-            onMouseLeave={() => !isMobile && setServicesOpen(false)}
+          <div
+            className="absolute left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-slate-100 py-2 z-20"
+            onMouseLeave={() => setServicesOpen(false)}
           >
             <Link
               href="/leistungen"
-              className="block px-4 py-2 text-sm text-indigo-700 font-medium border-b border-gray-100"
-              onClick={() => {
-                setServicesOpen(false)
-                onClick && onClick()
-              }}
+              className="block px-4 py-2.5 text-sm text-blue-600 font-semibold border-b border-slate-100 hover:bg-blue-50 transition-colors"
+              onClick={() => setServicesOpen(false)}
             >
-              Alle Leistungen
+              Alle Leistungen →
             </Link>
-            {serviceItems.map((item, index) => (
+            {services.map((service) => (
               <Link
-                key={index}
-                href={item.href}
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                onClick={() => {
-                  setServicesOpen(false)
-                  onClick && onClick()
-                }}
+                key={service.id}
+                href={service.link}
+                className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 transition-colors"
+                onClick={() => setServicesOpen(false)}
               >
-                {item.label}
+                {service.title}
               </Link>
             ))}
           </div>
         )}
       </div>
-      
-      <Link
-        href="/#ueber-uns"
-        className={cn("hover:text-primary transition-colors", className)}
-        onClick={onClick}
-      >
-        Über uns
+
+      <Link href="/#ueber-mich" className={linkClass}>
+        Über mich
       </Link>
-      <Link
-        href="/#kontakt"
-        className={cn("hover:text-primary transition-colors", className)}
-        onClick={onClick}
-      >
-        Kontakt
+    </>
+  )
+}
+
+type MobileNavLinksProps = {
+  onClick: () => void
+}
+
+const MobileNavLinks = ({ onClick }: MobileNavLinksProps) => {
+  const [servicesOpen, setServicesOpen] = useState(false)
+
+  const linkClass = "block px-3 py-2.5 rounded-lg text-slate-700 hover:bg-slate-50 hover:text-blue-600 font-medium text-sm transition-colors cursor-pointer"
+
+  return (
+    <>
+      <Link href="/" className={linkClass} onClick={onClick}>
+        Startseite
+      </Link>
+      <Link href="/#leistungen" className={linkClass} onClick={onClick}>
+        Leistungen
+      </Link>
+
+      <div>
+        <button
+          className={cn(linkClass, "w-full flex items-center justify-between")}
+          onClick={() => setServicesOpen(!servicesOpen)}
+        >
+          Einzelne Services
+          <ChevronDown className={cn("h-4 w-4 transition-transform", servicesOpen && "rotate-180")} />
+        </button>
+        {servicesOpen && (
+          <div className="pl-4 mt-1 space-y-1">
+            {services.map((service) => (
+              <Link
+                key={service.id}
+                href={service.link}
+                className="block px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 hover:text-blue-600 text-sm transition-colors cursor-pointer"
+                onClick={onClick}
+              >
+                {service.title}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <Link href="/#ueber-mich" className={linkClass} onClick={onClick}>
+        Über mich
       </Link>
     </>
   )

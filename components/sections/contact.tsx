@@ -33,66 +33,72 @@ const Contact = () => {
     resolver: zodResolver(formSchema),
   })
 
-  const [submitError, setSubmitError] = React.useState<string | null>(null);
+  const [submitError, setSubmitError] = React.useState<string | null>(null)
 
   const onSubmit = async (data: FormValues) => {
     try {
-      setSubmitError(null);
-      
-      // Anfrage an API-Route senden
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
+      setSubmitError(null)
 
-      // Antwort parsen
-      const responseData = await response.json();
-      
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      })
+
+      const responseData = await response.json()
+
       if (!response.ok) {
-        throw new Error(responseData.error || 'Ein Fehler ist aufgetreten beim Senden der Nachricht.');
+        throw new Error(
+          responseData.error || "Ein Fehler ist aufgetreten beim Senden der Nachricht."
+        )
       }
 
-      // Erfolgreiche Submission - Form wird zurückgesetzt
-      reset();
-      
-      // Bei Erfolg gibt es keine spezielle Aktion, da das isSubmitSuccessful 
-      // automatisch auf true gesetzt wird und die Erfolgsansicht angezeigt wird
+      reset()
     } catch (error) {
-      console.error('Fehler beim Absenden des Formulars:', error);
+      console.error("Fehler beim Absenden des Formulars:", error)
       setSubmitError(
-        error instanceof Error 
-          ? error.message 
-          : 'Ein unbekannter Fehler ist aufgetreten. Bitte kontaktieren Sie uns direkt per E-Mail an info@aio-consulting.de.'
-      );
-      // Form nicht zurücksetzen, damit der Benutzer es erneut versuchen kann
+        error instanceof Error
+          ? error.message
+          : "Ein unbekannter Fehler ist aufgetreten. Bitte kontaktieren Sie mich direkt per E-Mail an info@aio-consulting.de."
+      )
     }
   }
 
   return (
-    <section id="kontakt" className="py-20 bg-white">
+    <section id="kontakt" className="py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Kontaktieren Sie uns</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Haben Sie Fragen oder möchten Sie ein Projekt mit uns starten? 
-            Wir freuen uns auf Ihre Nachricht!
+          <div className="mb-3 text-sm font-mono text-blue-600 tracking-wider uppercase">
+            Kontakt
+          </div>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            Sprechen wir über Ihr Projekt
+          </h2>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            Schreiben Sie mir kurz, was Sie beschäftigt — ich antworte innerhalb von{" "}
+            <span className="font-semibold text-slate-800">24 Stunden</span> mit einer konkreten Einschätzung.
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
+        <div className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-md border border-slate-100">
           {isSubmitSuccessful ? (
             <div className="text-center py-8">
-              <h3 className="text-2xl font-bold text-primary mb-4">Vielen Dank für Ihre Nachricht!</h3>
-              <p className="text-gray-700 mb-6">
-                Wir haben Ihre Anfrage erhalten und werden uns zeitnah bei Ihnen melden.
+              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-5">
+                <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold font-display text-slate-900 mb-4">
+                Nachricht erhalten!
+              </h3>
+              <p className="text-slate-600 mb-6">
+                Ich habe Ihre Anfrage erhalten und melde mich zeitnah — in der Regel innerhalb von 24 Stunden.
               </p>
-              <p className="text-gray-600 text-sm mb-6">
-                Falls Sie keine Antwort erhalten, kontaktieren Sie uns bitte direkt unter <span className="font-medium">info@aio-consulting.de</span>
+              <p className="text-slate-500 text-sm mb-6">
+                Falls Sie nichts hören, erreichen Sie mich direkt unter{" "}
+                <span className="font-medium text-slate-700">info@aio-consulting.de</span>
               </p>
-              <Button 
+              <Button
                 onClick={() => reset({}, { keepValues: false })}
                 variant="outline"
               >
@@ -130,7 +136,7 @@ const Contact = () => {
                 <Label htmlFor="message">Nachricht</Label>
                 <Textarea
                   id="message"
-                  placeholder="Wie können wir Ihnen helfen?"
+                  placeholder="Was soll automatisiert werden? Welches Problem haben Sie?"
                   rows={5}
                   {...register("message")}
                 />
@@ -140,14 +146,14 @@ const Contact = () => {
               </div>
 
               {submitError && (
-                <div className="p-3 bg-red-50 border border-red-200 rounded-md text-red-600 mb-4">
+                <div className="p-3 bg-red-50 border border-red-200 rounded-md text-red-600 text-sm">
                   {submitError}
                 </div>
               )}
-              
-              <Button 
-                type="submit" 
-                className="w-full font-semibold"
+
+              <Button
+                type="submit"
+                className="w-full font-semibold bg-blue-600 hover:bg-blue-500"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Wird gesendet..." : "Nachricht senden"}
