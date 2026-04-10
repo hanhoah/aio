@@ -114,12 +114,12 @@ const Footer = () => {
               </li>
             </ul>
 
-            <Link
+            <a
               href="/#kontakt"
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-colors cursor-pointer"
             >
               Projekt anfragen →
-            </Link>
+            </a>
           </div>
         </div>
 

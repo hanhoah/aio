@@ -163,8 +163,32 @@ export default function CustomAiAgentsPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* Live-Demo Chatbot */}
       <section className="py-20 bg-[#080d1a] relative overflow-hidden">
+        <div className="absolute inset-0 hero-dot-grid opacity-20" aria-hidden="true" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 mb-6 px-3 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 text-sm">
+              <Bot size={14} />
+              Live-Demo
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+              Testen Sie selbst — unser eigener KI-Assistent
+            </h2>
+            <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
+              Der Chat-Button unten rechts ist ein Custom AI Agent — gebaut genau so, wie ich ihn auch für
+              Sie entwickle. Stellen Sie Fragen zu Leistungen, Preisen oder dem Ablauf.
+            </p>
+            <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-white/10 bg-white/5 text-slate-300 text-sm">
+              <span className="w-3 h-3 rounded-full bg-green-400 animate-pulse flex-shrink-0" />
+              KI-Assistent ist aktiv — klicken Sie auf das Chat-Symbol unten rechts
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-[#080d1a] relative overflow-hidden border-t border-white/5">
         <div className="absolute inset-0 hero-dot-grid opacity-30" aria-hidden="true" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">

@@ -3,6 +3,7 @@ import { Inter, Syne } from "next/font/google"
 import "./globals.css"
 import Header from "@/components/layout/header"
 import Footer from "@/components/layout/footer"
+import Chatbot from "@/components/ui/chatbot"
 import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
@@ -125,6 +126,7 @@ export default function RootLayout({
         <Header />
         <main className="min-h-screen pt-0">{children}</main>
         <Footer />
+        <Chatbot />
         <Analytics />
       </body>
     </html>
