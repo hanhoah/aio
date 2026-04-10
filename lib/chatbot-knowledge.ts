@@ -45,7 +45,7 @@ LEISTUNGEN (vollständige Übersicht):
    - Übergabe: Vollständig mit Code, Dokumentation und Training
    - Preis: Ab 5.000 €, je nach Umfang
 
-4. GEO & KI-SEO (/leistungen/geo-ki-seo)
+4. GEO – GENERATIVE ENGINE OPTIMIZATION (/leistungen/geo-ki-seo)
    - Was: Generative Engine Optimization — Sichtbarkeit in KI-Suchmaschinen
    - Ziel: Sichtbarkeit nicht nur bei Google, sondern auch in ChatGPT, Perplexity, Google AI Overviews
    - Maßnahmen: Strukturierte Daten, FAQ-Schema, Content-Tiefe, E-E-A-T-Signale

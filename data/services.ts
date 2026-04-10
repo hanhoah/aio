@@ -69,9 +69,9 @@ export const services: ServiceData[] = [
   {
     id: "geo-ki-seo",
     icon: Search,
-    title: "GEO & KI-SEO",
+    title: "GEO – Generative Engine Optimization",
     description:
-      "Ihre Website soll nicht nur bei Google ranken — sondern auch in ChatGPT, Perplexity und Google AI Overviews erscheinen. Ich optimiere für das KI-Zeitalter.",
+      "Klassisches SEO optimiert für Google-Rankings. GEO optimiert dafür, dass ChatGPT, Perplexity und Google AI Ihr Unternehmen zitieren — der neue Suchkanal, den Ihre Wettbewerber noch ignorieren.",
     link: "/leistungen/geo-ki-seo",
     benefits: [
       "Sichtbarkeit in KI-Suchmaschinen (ChatGPT, Perplexity, Gemini)",
@@ -105,7 +105,7 @@ export const services: ServiceData[] = [
       "Konkrete KI-Roadmap: was lohnt sich, was nicht",
       "Priorisierte Quick-Wins mit sofort umsetzbaren Maßnahmen",
       "Ehrliche Einschätzung ohne Vendor-Lock-in oder Upsell-Druck",
-      "Festpreis 300€ — kein stundenlanger Beratungsmarathon",
+      "Klarer Festpreis — kein stundenlanger Beratungsmarathon",
     ],
   },
 ];

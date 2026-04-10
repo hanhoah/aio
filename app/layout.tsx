@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "RAG Chatbot für Unternehmen",
     "KI-gestützte Webentwicklung",
     "KI-Prozessautomatisierung",
-    "GEO Optimierung",
+    "Generative Engine Optimization",
     "KI-Berater Deutschland",
     "Han Hoa Huynh",
     "aio-consulting",

@@ -17,7 +17,7 @@ const INITIAL_MESSAGE: Message = {
 const SUGGESTED_QUESTIONS = [
   "Was kostet ein Chatbot?",
   "Wie schnell ist Umsetzung möglich?",
-  "Was ist GEO & KI-SEO?",
+  "Was ist GEO (Generative Engine Optimization)?",
 ];
 
 // --- Markdown Renderer ---

@@ -4,16 +4,16 @@ import Link from "next/link"
 import { Search, CheckCircle, ArrowRight } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "GEO & KI-SEO: Sichtbarkeit in ChatGPT, Perplexity & Google AI",
+  title: "GEO – Generative Engine Optimization: Sichtbarkeit in ChatGPT, Perplexity & Google AI",
   description:
-    "Ich optimiere Ihre Website für das KI-Zeitalter: Sichtbarkeit in Google AI Overviews, ChatGPT und Perplexity. GEO + klassisches SEO aus einer Hand.",
+    "GEO (Generative Engine Optimization) optimiert Ihre Website für KI-Suchmaschinen: ChatGPT, Perplexity und Google AI Overviews. So zitieren KI-Systeme Ihr Unternehmen — nicht Ihre Wettbewerber.",
 }
 
 const useCases = [
   {
-    title: "GEO — Generative Engine Optimization",
+    title: "GEO – Generative Engine Optimization",
     description:
-      "Ich optimiere Ihren Content so, dass KI-Systeme wie ChatGPT, Perplexity und Google AI ihn als autoritativ einstufen und zitieren.",
+      "Ich optimiere Ihren Content so, dass KI-Systeme wie ChatGPT, Perplexity und Google AI ihn als autoritativ einstufen und zitieren — nicht nur klassische Suchmaschinen.",
   },
   {
     title: "Technisches SEO & Strukturierte Daten",
@@ -40,7 +40,12 @@ const faqs = [
   {
     question: "Was ist GEO (Generative Engine Optimization)?",
     answer:
-      "GEO ist die Optimierung Ihrer digitalen Präsenz für KI-Suchmaschinen wie ChatGPT, Perplexity und Google AI Overviews. Wenn Nutzer dort nach Lösungen suchen, die Sie anbieten, soll Ihr Unternehmen zitiert werden — nicht Ihre Wettbewerber.",
+      "GEO ist die Optimierung Ihrer digitalen Präsenz für KI-Suchmaschinen wie ChatGPT, Perplexity und Google AI Overviews. Wenn Nutzer dort nach Lösungen suchen, die Sie anbieten, soll Ihr Unternehmen zitiert werden — nicht Ihre Wettbewerber. Der Begriff wurde von SEO-Forschern geprägt und beschreibt einen neuen Optimierungsbereich neben klassischem Google-SEO.",
+  },
+  {
+    question: "Wie unterscheidet sich GEO von klassischem SEO?",
+    answer:
+      "Klassisches SEO optimiert für Keyword-Rankings bei Google — das Ziel ist der Klick auf Ihre Website. GEO optimiert dafür, dass KI-Systeme Ihren Content als verlässliche Quelle für ihre Antworten verwenden — das Ziel ist die Erwähnung/Zitierung. Beides ist wichtig, und ich mache beides.",
   },
   {
     question: "Warum taucht mein Unternehmen in KI-Suchen nicht auf?",
@@ -48,17 +53,12 @@ const faqs = [
       "KI-Suchmaschinen bevorzugen Content mit klarer Struktur, Autorität und Tiefe. Fehlende strukturierte Daten, oberflächlicher Content und schlechte technische SEO-Grundlage sind die häufigsten Ursachen.",
   },
   {
-    question: "Wie unterscheidet sich GEO von klassischem SEO?",
-    answer:
-      "Klassisches SEO optimiert für Keyword-Rankings bei Google. GEO optimiert dafür, dass KI-Systeme Ihren Content als verlässliche Quelle für ihre Antworten verwenden. Beides ist wichtig — und ich mache beides.",
-  },
-  {
     question: "Wann sehe ich erste Ergebnisse?",
     answer:
       "Technische Verbesserungen (strukturierte Daten, Schema-Markup) wirken innerhalb von 2–4 Wochen. Content-Tiefe und Autorität bauen sich über 3–6 Monate auf. GEO ist eine Investition — keine kurzfristige Maßnahme.",
   },
   {
-    question: "Was kostet GEO & KI-SEO?",
+    question: "Was kostet GEO?",
     answer:
       "Ich biete einen monatlichen Retainer ab 800 € an, der technisches SEO, Content-Optimierung und monatliches Reporting umfasst. Für einmalige Audits und Strukturierungen gibt es separate Pakete.",
   },
@@ -76,12 +76,16 @@ export default function GeoKiSeoPage() {
               <Search size={14} />
               Leistung
             </div>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-              GEO & KI-SEO
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4">
+              GEO
             </h1>
-            <p className="text-xl text-slate-400 leading-relaxed mb-8 max-w-2xl">
-              Ihre Website soll nicht nur bei Google ranken — sondern auch in{" "}
-              <span className="text-slate-200">ChatGPT, Perplexity und Google AI Overviews</span> erscheinen.
+            <p className="text-cyan-400 text-lg font-medium mb-6">
+              Generative Engine Optimization — Sichtbarkeit in KI-Suchmaschinen
+            </p>
+            <p className="text-xl text-slate-400 leading-relaxed mb-4 max-w-2xl">
+              Klassisches SEO bringt Sie in Google-Rankings. GEO sorgt dafür, dass{" "}
+              <span className="text-slate-200">ChatGPT, Perplexity und Google AI</span> Ihr
+              Unternehmen zitieren — der neue Suchkanal, den Ihre Wettbewerber noch ignorieren.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -129,7 +133,7 @@ export default function GeoKiSeoPage() {
               Was ich konkret tue
             </h2>
             <p className="text-slate-600 text-center mb-12 max-w-2xl mx-auto">
-              GEO & KI-SEO ist kein einzelnes Tool — sondern ein ganzheitlicher Ansatz aus Technik, Content und Struktur.
+              GEO ist kein einzelnes Tool — sondern ein ganzheitlicher Ansatz aus Technik, Content und Struktur.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {useCases.map((useCase) => (

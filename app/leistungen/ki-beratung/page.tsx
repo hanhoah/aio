@@ -32,7 +32,7 @@ const faqs = [
   {
     question: "Warum Festpreis 300 €?",
     answer:
-      "Weil ein klarer Preis klare Erwartungen schafft. Kein stundenlanger Beratungsmarathon, keine versteckten Kosten. Wenn ich Ihnen nach dem Gespräch nicht weiterhelfen konnte, erstatten Sie ich den Betrag.",
+      "Weil ein klarer Preis klare Erwartungen schafft. Kein stundenlanger Beratungsmarathon, keine versteckten Kosten. Wenn ich Ihnen nach dem Gespräch nicht weiterhelfen konnte, erstatte ich den Betrag.",
   },
   {
     question: "Was passiert nach der Beratung?",
@@ -67,14 +67,13 @@ export default function KiBeratungPage() {
               KI-Beratung & Strategie
             </h1>
             <p className="text-xl text-slate-400 leading-relaxed mb-6 max-w-2xl">
-              In 2 Stunden erstelle ich Ihre persönliche KI-Roadmap:{" "}
-              <span className="text-slate-200">Was lohnt sich? Was kostet es? Wo fangen Sie an?</span>
+              In 2 Stunden wissen Sie genau:{" "}
+              <span className="text-slate-200">Wo lohnt sich KI in Ihrem Unternehmen, was ist realistisch — und wo fangen Sie an?</span>
             </p>
             <div className="inline-flex items-center gap-3 mb-8 px-5 py-3 rounded-xl bg-blue-600/15 border border-blue-500/30">
-              <span className="text-3xl font-display font-bold text-white">300 €</span>
               <div>
-                <p className="text-blue-300 text-sm font-medium">Festpreis · 2 Stunden</p>
-                <p className="text-slate-500 text-xs">inkl. schriftlicher Zusammenfassung</p>
+                <p className="text-blue-300 text-sm font-medium">Festpreis · 2 Stunden · inkl. schriftliche Roadmap</p>
+                <p className="text-slate-400 text-xs mt-0.5">Kein Stundensatz, keine Überraschungen — 300 €</p>
               </div>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -171,7 +170,7 @@ export default function KiBeratungPage() {
             Starten Sie mit Klarheit.
           </h2>
           <p className="text-slate-400 text-lg mb-8 max-w-2xl mx-auto">
-            300 € für 2 Stunden, in denen Sie genau wissen, wo KI Ihrem Unternehmen hilft — und wo nicht.
+            2 Stunden. Eine klare Roadmap. Sie wissen danach genau, wo KI Ihrem Unternehmen hilft — und wo nicht.
           </p>
           <Link
             href="/#kontakt"
