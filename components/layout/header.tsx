@@ -12,6 +12,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20)
+    handleScroll() // Initialen Scroll-Zustand sofort prüfen (wichtig nach HMR / Back-Navigation)
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])

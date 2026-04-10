@@ -20,7 +20,74 @@ const SUGGESTED_QUESTIONS = [
   "Was ist GEO & KI-SEO?",
 ];
 
+// --- Markdown Renderer ---
+
+function renderInline(text: string): React.ReactNode[] {
+  const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|`[^`]+`)/);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
+      return (
+        <strong key={i} className="font-semibold text-white">
+          {part.slice(2, -2)}
+        </strong>
+      );
+    }
+    if (part.startsWith("*") && part.endsWith("*") && part.length > 2) {
+      return <em key={i}>{part.slice(1, -1)}</em>;
+    }
+    if (part.startsWith("`") && part.endsWith("`") && part.length > 2) {
+      return (
+        <code key={i} className="bg-white/10 px-1 rounded text-xs font-mono">
+          {part.slice(1, -1)}
+        </code>
+      );
+    }
+    return <React.Fragment key={i}>{part}</React.Fragment>;
+  });
+}
+
+function MarkdownText({ text }: { text: string }) {
+  if (!text) return null;
+  const paragraphs = text.split(/\n\n+/);
+
+  return (
+    <div className="space-y-2">
+      {paragraphs.map((para, pi) => {
+        const lines = para.split("\n").filter(Boolean);
+        const isList = lines.length > 0 && lines.every((l) => /^[-*] /.test(l));
+
+        if (isList) {
+          return (
+            <ul key={pi} className="space-y-1">
+              {lines.map((l, li) => (
+                <li key={li} className="flex items-start gap-2">
+                  <span className="text-blue-400 flex-shrink-0 mt-0.5">•</span>
+                  <span>{renderInline(l.replace(/^[-*] /, ""))}</span>
+                </li>
+              ))}
+            </ul>
+          );
+        }
+
+        return (
+          <p key={pi} className="leading-relaxed">
+            {lines.map((line, li) => (
+              <React.Fragment key={li}>
+                {renderInline(line)}
+                {li < lines.length - 1 && <br />}
+              </React.Fragment>
+            ))}
+          </p>
+        );
+      })}
+    </div>
+  );
+}
+
+// --- Main Component ---
+
 export default function Chatbot() {
+  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE]);
   const [input, setInput] = useState("");
@@ -29,6 +96,9 @@ export default function Chatbot() {
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const abortRef = useRef<AbortController | null>(null);
+
+  // Nur nach Hydration rendern — verhindert SSR/Client-Mismatch in dev (Strict Mode)
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -47,11 +117,11 @@ export default function Chatbot() {
       if (!trimmed || isLoading) return;
 
       const userMessage: Message = { role: "user", content: trimmed };
+      const allMessages = [...messages, userMessage];
+
       setMessages((prev) => [...prev, userMessage]);
       setInput("");
       setIsLoading(true);
-
-      const allMessages = [...messages, userMessage];
 
       abortRef.current = new AbortController();
 
@@ -67,10 +137,11 @@ export default function Chatbot() {
           throw new Error("Antwort fehlgeschlagen");
         }
 
-        // Streaming lesen
         const reader = response.body.getReader();
         const decoder = new TextDecoder();
         let assistantText = "";
+        // Buffer für unvollständige SSE-Zeilen (Chunk-Grenzen)
+        let lineBuffer = "";
 
         setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
 
@@ -78,17 +149,21 @@ export default function Chatbot() {
           const { done, value } = await reader.read();
           if (done) break;
 
-          const chunk = decoder.decode(value, { stream: true });
-          const lines = chunk.split("\n").filter((l) => l.startsWith("data: "));
+          lineBuffer += decoder.decode(value, { stream: true });
+          const lines = lineBuffer.split("\n");
+          // Letzte (potenziell unvollständige) Zeile im Buffer behalten
+          lineBuffer = lines.pop() ?? "";
 
           for (const line of lines) {
-            const data = line.slice(6).trim();
+            const trimmedLine = line.trim();
+            if (!trimmedLine.startsWith("data: ")) continue;
+            const data = trimmedLine.slice(6).trim();
             if (data === "[DONE]") break;
 
             try {
               const parsed = JSON.parse(data);
               const delta = parsed.choices?.[0]?.delta?.content;
-              if (delta) {
+              if (typeof delta === "string") {
                 assistantText += delta;
                 setMessages((prev) => {
                   const updated = [...prev];
@@ -100,7 +175,7 @@ export default function Chatbot() {
                 });
               }
             } catch {
-              // Ungültiges JSON-Fragment überspringen
+              // Ungültiges JSON-Fragment — normal bei SSE, überspringen
             }
           }
         }
@@ -136,6 +211,8 @@ export default function Chatbot() {
     }
   };
 
+  if (!mounted) return null;
+
   return (
     <>
       {/* Floating Button */}
@@ -156,9 +233,9 @@ export default function Chatbot() {
         )}
       </button>
 
-      {/* Chat Panel */}
+      {/* Chat Panel — 420px (~20% breiter als vorher), mobilsicher */}
       {isOpen && (
-        <div className="fixed bottom-24 right-6 z-50 w-[350px] max-w-[calc(100vw-1.5rem)] flex flex-col rounded-2xl border border-white/10 bg-[#0d1526] shadow-2xl shadow-black/50 overflow-hidden">
+        <div className="fixed bottom-24 right-6 z-50 w-[420px] max-w-[calc(100vw-1.5rem)] flex flex-col rounded-2xl border border-white/10 bg-[#0d1526] shadow-2xl shadow-black/50 overflow-hidden">
           {/* Header */}
           <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10 bg-[#080d1a]">
             <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
@@ -175,35 +252,39 @@ export default function Chatbot() {
           </div>
 
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 max-h-[380px] min-h-[200px]">
+          <div className="flex-1 overflow-y-auto p-4 space-y-3 max-h-[420px] min-h-[200px]">
             {messages.map((msg, i) => (
               <div
                 key={i}
                 className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 {msg.role === "assistant" && (
-                  <div className="w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/30 flex items-center justify-center mr-2 flex-shrink-0 mt-0.5">
+                  <div className="w-6 h-6 rounded-full bg-blue-600/30 border border-blue-500/30 flex items-center justify-center mr-2 flex-shrink-0 mt-1">
                     <Bot size={11} className="text-blue-400" />
                   </div>
                 )}
                 <div
-                  className={`max-w-[82%] px-3 py-2 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap ${
+                  className={`max-w-[85%] px-3 py-2.5 rounded-2xl text-sm ${
                     msg.role === "user"
-                      ? "bg-blue-600 text-white rounded-br-sm"
-                      : "bg-white/8 text-slate-200 rounded-bl-sm border border-white/5"
+                      ? "bg-blue-600 text-white rounded-br-sm leading-relaxed"
+                      : "bg-white/[0.06] text-slate-200 rounded-bl-sm border border-white/5"
                   }`}
                 >
-                  {msg.content || (
-                    <span className="flex items-center gap-1 text-slate-400">
+                  {msg.role === "user" ? (
+                    msg.content
+                  ) : msg.content ? (
+                    <MarkdownText text={msg.content} />
+                  ) : (
+                    <span className="flex items-center gap-1.5 text-slate-400">
                       <Loader2 size={12} className="animate-spin" />
-                      <span className="text-xs">Schreibt...</span>
+                      <span className="text-xs">Schreibt…</span>
                     </span>
                   )}
                 </div>
               </div>
             ))}
 
-            {/* Suggested questions — nur wenn erstes und kein Loading */}
+            {/* Suggested questions — nur beim Start */}
             {messages.length === 1 && !isLoading && (
               <div className="space-y-1.5 pt-1">
                 {SUGGESTED_QUESTIONS.map((q) => (
@@ -233,9 +314,9 @@ export default function Chatbot() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ihre Frage..."
+              placeholder="Ihre Frage…"
               disabled={isLoading}
-              className="flex-1 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-500/50 focus:bg-white/8 transition-colors disabled:opacity-50"
+              className="flex-1 bg-white/5 border border-white/10 rounded-xl px-3 py-2 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-500/50 transition-colors disabled:opacity-50"
             />
             <button
               type="submit"
@@ -251,7 +332,6 @@ export default function Chatbot() {
             </button>
           </form>
 
-          {/* Footer note */}
           <p className="text-center text-[10px] text-slate-600 py-1.5 border-t border-white/5 bg-[#080d1a]">
             KI-gestützt · Kein Ersatz für persönliche Beratung
           </p>
