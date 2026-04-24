@@ -20,7 +20,7 @@ const syne = Syne({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.aio-consulting.de"),
+  metadataBase: new URL("https://aio-consulting.de"),
   title: {
     default: "KI-Prozessautomatisierung & Custom AI Agents | aio-consulting.de",
     template: "%s | aio-consulting.de",
@@ -39,12 +39,12 @@ export const metadata: Metadata = {
     "Han Hoa Huynh",
     "aio-consulting",
   ],
-  authors: [{ name: "Han Hoa Huynh", url: "https://www.aio-consulting.de" }],
+  authors: [{ name: "Han Hoa Huynh", url: "https://aio-consulting.de" }],
   creator: "Han Hoa Huynh",
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://www.aio-consulting.de",
+    url: "https://aio-consulting.de",
     title: "KI-Prozessautomatisierung & Custom AI Agents | Han Hoa Huynh",
     description:
       "Ich baue Custom AI Agents, Chatbots und KI-Automatisierungen für mittelständische Unternehmen. ROI in 4–8 Wochen messbar.",
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.aio-consulting.de",
+    canonical: "https://aio-consulting.de",
   },
 }
 
@@ -82,7 +82,7 @@ const personSchema = {
   "@type": "Person",
   name: "Han Hoa Huynh",
   jobTitle: "KI-Berater & Entwickler",
-  url: "https://www.aio-consulting.de",
+  url: "https://aio-consulting.de",
   email: "info@aio-consulting.de",
   sameAs: ["https://www.linkedin.com/in/han-hoa-huynh-8738aa39/"],
   knowsAbout: [
@@ -99,7 +99,7 @@ const personSchema = {
   worksFor: {
     "@type": "Organization",
     name: "aio-consulting.de",
-    url: "https://www.aio-consulting.de",
+    url: "https://aio-consulting.de",
   },
   address: {
     "@type": "PostalAddress",
